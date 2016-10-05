@@ -1,0 +1,9 @@
+#lineChart {
+  border: black solid;
+  margin-bottom: 50px;
+}
+
+.chartWrapper {
+  width: 20%;
+  height: 20%
+}
