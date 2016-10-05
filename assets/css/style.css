@@ -73,7 +73,7 @@
 	background-image: url('../../images/plus.png');
 	display: inline-block;
 	margin-right: 5px;
-	
+
 }
 /* ##### GENERAL  ##### */
 *{
@@ -587,7 +587,7 @@ footer.main-footer nav.footer-nav ul li a{
 
 /*site hero 2 */
 .site-hero_2{
-	background: url("../img/site-hero2.jpg") no-repeat;
+	background: url("../../images/site-hero2.jpg") no-repeat;
 	background-size: cover;
 	height: 500px;
 	width: 100%;
