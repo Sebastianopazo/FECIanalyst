@@ -20,6 +20,8 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); /* Montserrat font */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800); /* Open sans font */
 
+
+
 #lineChart {
   border: black solid;
   margin-bottom: 50px;
@@ -32,9 +34,14 @@
 
 
 #logo {
-	margin-left: 100%;
-	margin-top: 100%;
+  position: absolute;
+  margin-left: 30%;
+  margin-top: 150px;
+  max-width: 200px;
+  max-height: 200px;
 }
+
+
 .delete {
 	width: 15px;
 	height: 15px;
@@ -203,9 +210,16 @@ ul.social-icons li a:hover{
 		    -ms-transform:translateX(-50%);
 		        transform:translateX(-50%);
 	}
+
+
 }
-
-
+@media (max-width: 1650px) {
+    #logo {
+        max-width: 100px;
+        margin-left: 47%;
+        margin-top: 100px;
+    }
+}
 /*lists*/
 /*list 1*/
 ul.list li{
@@ -364,12 +378,6 @@ header.main-header{
 	top:0;
 	left: 0;
 	z-index: 9;
-}
-/*logo*/
-header.main-header .logo{
-	float: left;
-	height: 100px;
-	line-height: 100px;
 }
 
 .menu{float: right;}
