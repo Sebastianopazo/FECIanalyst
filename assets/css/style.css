@@ -35,10 +35,10 @@
 
 #logo {
   position: absolute;
-  margin-left: 30%;
-  margin-top: 150px;
-  max-width: 200px;
-  max-height: 200px;
+  margin-left: 46%;
+  margin-top: 70px;
+  max-width: 150px;
+  max-height: 150px;
 }
 
 
@@ -213,13 +213,7 @@ ul.social-icons li a:hover{
 
 
 }
-@media (max-width: 1650px) {
-    #logo {
-        max-width: 100px;
-        margin-left: 47%;
-        margin-top: 100px;
-    }
-}
+
 /*lists*/
 /*list 1*/
 ul.list li{
