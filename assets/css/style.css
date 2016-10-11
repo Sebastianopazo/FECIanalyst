@@ -19,19 +19,104 @@
 */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); /* Montserrat font */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800); /* Open sans font */
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
 
+
+#mobileContainer {
+  height: 100%;
+}
+/* Scroll */
+#scroll {
+	height:100%;
+	text-align: center;
+	padding: 100px;
+  min-height: 100px;
+  margin-top: 20px;
+}
+
+#scroll .scrolling {
+	padding-top: 80px;
+	bottom: 20px;
+	left: 50%;
+	z-index: 2;
+	display: inline-block;
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	color: #000000;
+	letter-spacing: .1em;
+	text-decoration: none;
+	transition: opacity .3s;
+  font-weight: bold;
+}
+
+#scroll .scrolling:hover {
+	opacity: .5;
+}
+
+#scroll .scrolling span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	margin-left: -12px;
+	border-left: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-animation: sdb07 2s infinite;
+	animation: sdb07 2s infinite;
+	opacity: 0;
+	box-sizing: border-box;
+}
+#scroll .scrolling span:nth-of-type(1) {
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+#scroll .scrolling span:nth-of-type(2) {
+	top: 16px;
+	-webkit-animation-delay: .15s;
+	animation-delay: .15s;
+}
+#scroll .scrolling span:nth-of-type(3) {
+	top: 32px;
+	-webkit-animation-delay: .3s;
+	animation-delay: .3s;
+}
+
+@-webkit-keyframes sdb07 {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes sdb07 {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+/* Form radio inputs*/
 label {
   width: 200px;
   border-radius: 3px;
   border: 1px solid #D1D3D4
 }
 
-/* hide input */
 input.radio:empty {
-	margin-left: -999px;
+	display: none;
 }
 
-/* style label */
 input.radio:empty ~ label {
 	position: relative;
 	float: left;
@@ -72,8 +157,8 @@ input.radio:hover:not(:checked) ~ label {
 input.radio:checked ~ label:before {
 	content:'\2714';
 	text-indent: .9em;
-	color: #9CE2AE;
-	background-color: #4DCB6D;
+	color: white;
+	background-color: #84aabc;
 }
 
 input.radio:checked ~ label {
