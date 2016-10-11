@@ -21,6 +21,13 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800); /* Open sans font */
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
 
+.spaceup {
+  margin-top: 50px;
+}
+
+.textBlock {
+  text-align: justify;
+}
 
 #mobileContainer {
   height: 100%;
