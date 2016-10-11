@@ -15,26 +15,26 @@
 <body class="animsition">
 	<header class="main-header">
 		<div class="container">
-		<div class="menu">
-			<!-- desktop navbar -->
-			<nav class="desktop-nav">
-				<ul class="first-level">
-					<li><a href="index.html" class="animsition-link">Home</a></li>
-					<li><a href="about.html" class="animsition-link">about FECI</a></li>
-					<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
-					<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
-				</ul>
-			</nav>
-			<!-- mobile navbar -->
-			<nav class="mobile-nav"></nav>
-			<div class="menu-icon">
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
+			<div class="menu">
+				<!-- desktop navbar -->
+				<nav class="desktop-nav">
+					<ul class="first-level">
+						<li><a href="index.html" class="animsition-link">Home</a></li>
+						<li><a href="about.html" class="animsition-link">about FECI</a></li>
+						<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
+						<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
+					</ul>
+				</nav>
+				<!-- mobile navbar -->
+				<nav class="mobile-nav"></nav>
+				<div class="menu-icon">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
 			</div>
 		</div>
 		</div>
-	</div>
 	</header>
 	<div class="site-hero_2">
 		<div class="logo">
@@ -222,13 +222,14 @@
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
 
 	</script>
 	<script type="text/javascript">
 		google.maps.event.addDomListener(window, 'load', initialize);
+
 		function initialize() {
 			var mapOptions = {
 				zoom: 15,
@@ -366,7 +367,6 @@
 			new WOW().init();
 			$("#map").css("height", $("#map").parent().parent().height() + "px");
 		});
-
 	</script>
 
 </body>
