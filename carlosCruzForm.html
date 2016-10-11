@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="assets/css/animsition.min.css">
 	<link rel="stylesheet" href="assets/css/animate.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 </head>
 
 <body class="animsition">
@@ -57,11 +58,18 @@
 						1.	¿Ocupa su tiempo libre dedicándose a muchas actividades diferentes?
 					</p>
 				</div>
-				<div class="col-md-3 wow fadeInUp" data-wow-delay=".1s">
-					<label for="field1">
-						<input type="radio" name="field1" value="Yes">Yes
-					</label>
-				</div>
+				<div data-role="main" class="ui-content">
+	<form method="post" action="demoform.asp">
+		<fieldset data-role="controlgroup">
+		<legend>Choose your gender:</legend>
+			<label for="male">Male</label>
+			<input type="radio" name="gender" id="male" value="male">
+			<label for="female">Female</label>
+			<input type="radio" name="gender" id="female" value="female">
+		</fieldset>
+			<input type="submit" data-inline="true" value="Submit">
+	</form>
+</div>
 			</div>
 		</div>
 	</section>
@@ -179,6 +187,8 @@
 
 	<!-- SCRIPTS -->
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
