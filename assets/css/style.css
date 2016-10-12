@@ -22,7 +22,7 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
 
 .spaceup {
-  margin-top: 50px;
+  margin-top: 50
 }
 
 .textBlock {
@@ -189,11 +189,14 @@ input.radio:focus ~ label:before {
 
 
 #logo {
+  background-image: url('../../images/1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
   position: absolute;
   margin-left: 46%;
   margin-top: 70px;
-  max-width: 150px;
-  max-height: 150px;
 }
 
 
