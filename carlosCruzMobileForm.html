@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Carlos Cruz</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/ionicons.min.css">
+	<link rel="stylesheet" href="assets/css/animsition.min.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="animsition">
+	<header class="main-header">
+		<div class="container">
+			<div class="menu">
+				<!-- desktop navbar -->
+				<nav class="desktop-nav">
+					<ul class="first-level">
+						<li><a href="index.html" class="animsition-link">Home</a></li>
+						<li><a href="about.html" class="animsition-link">about FECI</a></li>
+						<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
+						<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
+					</ul>
+				</nav>
+				<!-- mobile navbar -->
+				<nav class="mobile-nav"></nav>
+				<div class="menu-icon">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+	<section>
+		<div class="container" id="mobileContainter">
+			<div class="row">
+				<div class="col-md-9 wow fadeInUp">
+					<p>
+						1.-Do you like Harry Potter?
+					</p>
+				</div>
+				<div class="col-md-3 wow fadeInUp">
+					<div>
+						<input type="radio" name="radio" id="radio1" class="radio"/>
+						<label for="radio1">Yes</label>
+					</div>
+					<div>
+						<input type="radio" name="radio" id="radio2" class="radio"/>
+						<label for="radio2">No</label>
+					</div>
+					<div>
+						<input type="radio" name="radio" id="radio3" class="radio"/>
+						<label for="radio3">Not answered</label>
+					</div>
+				</div>
+				</div>
+			</div>
+
+				</section>
+			<div id="scroll" class="green-section wow fadeInUp">
+				<div class="scrolling"><span></span><span></span><span></span>Tap to Next Question</a></div>
+			</div>
+		</div>
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+	<script type="text/javascript" src="assets/js/wow.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			new WOW().init();
+		});
+	</script>
+	<script type="text/javascript">
+	$(function() {
+$('a[href*=#]').on('click', function(e) {
+	e.preventDefault();
+	$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+});
+});
+	</script>
+</body>
+
+</html>
