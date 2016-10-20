@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FECI Analyst</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/ionicons.min.css">
+	<link rel="stylesheet" href="assets/css/animsition.min.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="animsition">
+	<header class="main-header">
+		<div class="container">
+			<div class="menu">
+				<!-- desktop navbar -->
+				<nav class="desktop-nav">
+					<ul class="first-level">
+						<li><a href="index.html" class="animsition-link">Home</a></li>
+						<li><a href="about.html" class="animsition-link">about FECI</a></li>
+						<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
+						<li><a href="techSupport.html" class="animsition-link">APIS Page</a></li>
+					</ul>
+				</nav>
+				<!-- mobile navbar -->
+				<nav class="mobile-nav"></nav>
+				<div class="menu-icon">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</header>
+	<div class="site-hero_2">
+		<a href="index.html">
+			<div id="logo">
+			</div>
+		</a>
+		<div class="page-title">
+			<div class="big-title montserrat-text uppercase">API's Page</div>
+			<div class="small-title montserrat-text uppercase">the | APIS | PAGE</div>
+		</div>
+	</div>
+	<section>
+		<div class="container">
+			<div class="section-title">
+				<span>Testing a basic video Search engine</span>
+			</div>
+			<div class="row">
+				<div class="col-md-9 wow fadeInUp">
+					<p>
+						<b>Youtube</b>
+					</p>
+					<form action="#">
+						<p><input type="text" id="search" placeholder="Type something..." autocomplete="on" class="form-control"></p>
+						<p>
+							<input type="submit" name="Search" class="form-control btn btn-primary w100" value="Search">
+						</p>
+					</form>
+					<div id="results">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- SCRIPTS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+		<script type="text/javascript" src="assets/js/wow.min.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+	<script src='https://apis.google.com/js/client.js?onload=init'>
+	</script>
+<script type="text/javascript">
+$(function () {
+	$("form").on("submit", function(e) {
+		e.preventDefault();
+		var request = gapi.client.youtube.search.list({
+			part: "snippet",
+			type: "video",
+			q: encondeURIComponent($("#search").val()).replace(/%20/g, "+"),
+			maxResults: 5,
+			order: "viewCount",
+		});
+		request.execute(function(response) {
+			console.log(response);
+		});
+	});
+});
+function init() {
+	gapi.client.setApiKey('AIzaSyBx4OVnRKhXRdb7LxdeM4FkWDqNKlRN_fw');
+	gapi.client.load("youtube", "v3", function (){
+	});
+};
+</script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			new WOW().init();
+		});
+	</script>
+</body>
+
+</html>
