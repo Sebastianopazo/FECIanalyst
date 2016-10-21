@@ -76,8 +76,14 @@
 		<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
 		<script type="text/javascript" src="assets/js/wow.min.js"></script>
 		<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript">
+function init() {
+	gapi.client.setApiKey('AIzaSyBx4OVnRKhXRdb7LxdeM4FkWDqNKlRN_fw');
+	gapi.client.load("youtube", "v3", function (){
+	});
+};
+</script>
 
-	</script>
 <script type="text/javascript">
 $(function () {
 	$("form").on("submit", function(e) {
@@ -94,11 +100,6 @@ $(function () {
 		});
 	});
 });
-function init() {
-	gapi.client.setApiKey('AIzaSyBx4OVnRKhXRdb7LxdeM4FkWDqNKlRN_fw');
-	gapi.client.load("youtube", "v3", function (){
-	});
-};
 </script>
 	<script type="text/javascript">
 		$(window).load(function() {
