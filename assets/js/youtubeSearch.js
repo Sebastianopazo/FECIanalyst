@@ -5,7 +5,7 @@ function init() {
 $(function() {
     $("form").on("submit", function(e) {
         e.preventDefault();
-        var request = gapi.client.youtube.list({
+        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
             q: encondeURIComponent($("#search").val()).replace(/%20/g, "+"),
