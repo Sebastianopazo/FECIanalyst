@@ -5,7 +5,7 @@ function init() {
     });
 }
 $(function() {
-    $("form").on("submit", function() makeRequest {
+    $("form").on("submit", function makeRequest() {
         var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
