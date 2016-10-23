@@ -2,7 +2,7 @@ function init() {
     gapi.client.setApiKey("AIzaSyBx4OVnRKhXRdb7LxdeM4FkWDqNKlRN_fw");
     gapi.client.load("youtube", v3, function() {});
 }
-$(function() {
+$(document).ready(function() {
     $("form").on("submit", function(e) {
         e.preventDefault();
         var request = gapi.client.youtube.search.list({
