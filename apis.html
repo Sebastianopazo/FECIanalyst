@@ -75,34 +75,8 @@
 	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
-	<script type="text/javascript">
-		$(function () {
-			$("form").on("submit", function (e) {
-				e.preventDefault();
-				var request = gapi.client.youtube.search.list({
-					part: "snippet",
-					type: "video",
-					q: encondeURIComponent($("#search").val()).replace(/%20/g, "+"),
-					maxResults: 10,
-					order: "relevance",
-				});
-				request.execute(function(response) {
-					console.log(response);
-				});
-			});
-		});
-function init () {
-	gapi.client.setApiKey("AIzaSyBx4OVnRKhXRdb7LxdeM4FkWDqNKlRN_fw");
-	gapi.client.load("youtube", v3, function() {
-	});
-}
-	</script>
-	<script type="text/javascript">
-		$(window).load(function() {
-			new WOW().init();
-		});
-	</script>
-		<script src='https://apis.google.com/js/client.js?onload=googleApiClientReady'></script>
+	<script src='https://apis.google.com/js/client.js?onload=googleApiClientReady'></script>
+	<script src="assets/js/youtubeSearch.js"></script>
 </body>
 
 </html>
