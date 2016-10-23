@@ -71,42 +71,44 @@
 	</section>
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src='https://apis.google.com/js/client.js?onload=init'></script>
-		<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
-		<script type="text/javascript" src="assets/js/wow.min.js"></script>
-		<script type="text/javascript" src="assets/js/main.js"></script>
-<script type="text/javascript">
-function init() {
-	gapi.client.setApiKey('AIzaSyBx4OVnRKhXRdb7LxdeM4FkWDqNKlRN_fw');
-	gapi.client.load("youtube", "v3", function (){
-		searchA();
-	});
-};
-</script>
+	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+	<script type="text/javascript" src="assets/js/wow.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript">
+		googleApiClientReady = function() {
+			loadApi() = function() {
+				return new Promise(function(resolve, reject) {
+					gapi.client.setApiKey('AIzaSyBx4OVnRKhXRdb7LxdeM4FkWDqNKlRN_fw');
+					gapi.client.load('youtube', 'v3', resolve);
+				});
+			}
+		};
+	</script>
 
-<script type="text/javascript">
-$(function searchA() {
-	$("form").on("submit", function(e) {
-		e.preventDefault();
-		var request = gapi.client.youtube.search.list({
-			part: "snippet",
-			type: "video",
-			q: encondeURIComponent($("#search").val()).replace(/%20/g, "+"),
-			maxResults: 5,
-			order: "viewCount",
+	<script type="text/javascript">
+		$(function searchA() {
+			$("form").on("submit", function(e) {
+				e.preventDefault();
+				var request = gapi.client.youtube.search.list({
+					part: "snippet",
+					type: "video",
+					q: encondeURIComponent($("#search").val()).replace(/%20/g, "+"),
+					maxResults: 5,
+					order: "viewCount",
+				});
+				request.execute(function(response) {
+					console.log(response);
+				});
+			});
 		});
-		request.execute(function(response) {
-			console.log(response);
-		});
-	});
-});
-</script>
+	</script>
 	<script type="text/javascript">
 		$(window).load(function() {
 			new WOW().init();
 		});
 	</script>
+		<script src='https://apis.google.com/js/client.js?onload=googleApiClientReady'></script>
 </body>
 
 </html>
