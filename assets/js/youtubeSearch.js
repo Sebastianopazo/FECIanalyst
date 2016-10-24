@@ -1,4 +1,3 @@
-$(function() {
     $("form").on("submit", function(e) {
         e.preventDefault();
         var request = gapi.client.youtube.search.list({
