@@ -7,6 +7,7 @@
     messagingSenderId: "395548199076"
   };
   firebase.initializeApp(config);
+  var database = firebase.database();
 
   //getting elements from html
   const txtEmail = document.getElementById('txtEmail');
@@ -16,6 +17,7 @@
   const btnLogout = document.getElementById('btnLogout');
   const txtEmail2 = document.getElementById('txtEmail2');
   const txtPass2 = document.getElementById('txtPass2');
+  const loginInfo = document.getElementById('loginInfo');
 
 
 
@@ -48,11 +50,14 @@ btnLogout.addEventListener('click', e =>{
 // add a realtime listener
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if (firebaseUser) {
-    window.alert('succesfully logged in')
+    window.alert('Succesfully logged in');
     console.log(firebaseUser);
     btnLogout.classList.remove('hide');
+    loginInfo.classList.add('hide');
+
   } else {
-    window.alert('not logged');
+    window.alert('Logged out');
     btnLogout.classList.add('hide');
+    loginInfo.classList.remove('hide');
   }
 });
