@@ -15,7 +15,6 @@
   const btnSignUp = document.getElementById('btnSignup');
   const btnLogout = document.getElementById('btnLogout');
   const txtEmail2 = document.getElementById('txtEmail2');
-  const txtLastName = document.getElementById('txtLastName');
   const txtPass2 = document.getElementById('txtPass2');
 
 
@@ -42,11 +41,18 @@ btnSignUp.addEventListener('click', e => {
   promise.catch(e => console.log(e.message))
 });
 
+btnLogout.addEventListener('click', e =>{
+  firebase.auth().signOut();
+});
+
 // add a realtime listener
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if (firebaseUser) {
+    window.alert('succesfully logged in')
     console.log(firebaseUser);
+    btnLogout.classList.remove('hide');
   } else {
-    console.log('not logged');
+    window.alert('not logged');
+    btnLogout.classList.add('hide');
   }
 });

@@ -15,7 +15,7 @@
 				outDuration           :    800,
 				linkElement           :   '.animsition-link',
 				loading               :    true,
-				loadingParentElement  :   'body', 
+				loadingParentElement  :   'body',
 				unSupportCss          : [ 'animation-duration',
 										  '-webkit-animation-duration',
 										  '-o-animation-duration'
@@ -31,6 +31,15 @@
 			$(this).next("span").addClass("active");
 		});
 		$(".input_1 input, .textarea_1 textarea").blur(function(){
+			if($(this).val() === ""){
+				$(this).next("span").removeClass("active");
+			}
+		});
+
+		$(".input_3 input, .textarea_1 textarea").focus(function(){
+			$(this).next("span").addClass("active");
+		});
+		$(".input_3 input, .textarea_1 textarea").blur(function(){
 			if($(this).val() === ""){
 				$(this).next("span").removeClass("active");
 			}
@@ -70,7 +79,7 @@
 		// NAVBAR
 		var _link = $("nav.desktop-nav ul.first-level").children("li");
 		var shown = false;
-		// show navbar 
+		// show navbar
 		$(".menu-icon").click(function(){
 			var _this = $(this);
 			$("nav.mobile-nav").slideToggle(200);
@@ -84,7 +93,7 @@
 				shown = false;
 			}
 		});
-		
+
 		// dropdown - desktop
 		_link.hover(function(e){
 			e.preventDefault();

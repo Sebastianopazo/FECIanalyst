@@ -21,6 +21,10 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800); /* Open sans font */
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
 
+.hide {
+  display: none;
+}
+
 .spaceup {
   margin-top: 50
 }
@@ -1084,7 +1088,51 @@ footer.main-footer nav.footer-nav ul li a{
 .input_2 > input:focus{
 	background-color: #f2f2f2;
 }
-
+/*input 3*/
+.input_3{
+	height: 50px;
+	width: 100%;
+	border:solid 1px rgba(0,0,0,.1);
+	position: relative;
+  background-color: white;
+}
+.input_3 input[type="text"],[type= "password"]{
+	height: 100%;
+	width: 100%;
+	border:0;
+	padding: 0 20px;
+	float: left;
+	position: relative;
+	background-color: transparent;
+	z-index: 2;
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	color:#9a9a9a;
+}
+.input_3 > span{
+	position: absolute;
+	top:50%;
+	left: 20px;
+	-webkit-transform:translateY(-50%);
+	    -ms-transform:translateY(-50%);
+	        transform:translateY(-50%);
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	text-transform: uppercase;
+	color:#cdcdcd;
+	-webkit-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+	z-index: 1;
+}
+.input_3 > span.active,.textarea_1 > span.active{
+	color:#84aabc;
+	font-size: 10px;
+	top:0px;
+	left: 5px;
+	background-color: #fff;
+	padding: 5px
+}
 /* ##### 06 : BENEFITS STYLES  ##### */
 /*benefits 1*/
 .benefits_1_single{
