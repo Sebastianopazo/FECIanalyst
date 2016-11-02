@@ -91,18 +91,18 @@
 						<form action="#" method="post">
 							<div class="col-md-10 spaceup">
 								<div class="input_1" style="margin-bottom:30px">
-									<input type="text" name="name">
-									<span>User Name</span>
+									<input id=txtEmail type="text" name="name">
+									<span>Email</span>
 								</div>
 							</div>
 							<div class="col-md-10">
 								<div class="input_1" style="margin-bottom:30px">
-									<input type="text" name="name">
+									<input id=txtPassword type="text" name="name">
 									<span>Password</span>
 								</div>
 							</div>
 					</div>
-					<a href="dashboard.html" class="btn white" style="margin-top:30px"><span>Login</span></a>
+					<a href="#" id="btnLogin" class="btn white" style="margin-top:30px"><span>Login</span></a>
 					</form>
 				</div>
 			</div>
@@ -117,13 +117,13 @@
 							<form action="#" method="post">
 								<div class="col-md-6">
 									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="name">
-										<span>Name</span>
+										<input id="txtEmail2" type="text" name="Email">
+										<span>Email</span>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="email">
+										<input id="txtLastName" type="text" name="email">
 										<span>Last Name</span>
 									</div>
 								</div>
@@ -141,7 +141,7 @@
 								</div>
 								<div class="col-md-12">
 									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="object">
+										<input id="txtPass2" type="text" name="object">
 										<span>Student Code</span>
 									</div>
 									<div class="input_1" style="margin-bottom:30px">
@@ -150,7 +150,7 @@
 									</div>
 								</div>
 								<div class="col-md-12">
-									<a href="#" class="btn green"><span>Sign Up	</span></a>
+									<a id="btnSignup" href="#" class="btn green"><span>Sign Up	</span></a>
 								</div>
 							</form>
 						</div>
@@ -192,17 +192,6 @@
 	</footer>
 	<!-- SCRIPTS -->
 	<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
-	<script>
-		// Initialize Firebase
-		var config = {
-			apiKey: "AIzaSyAQ6JSPlX0KrWdN2HCckXjJaNrS68Rey1U",
-			authDomain: "fecianalyst.firebaseapp.com",
-			databaseURL: "https://fecianalyst.firebaseio.com",
-			storageBucket: "fecianalyst.appspot.com",
-			messagingSenderId: "395548199076"
-		};
-		firebase.initializeApp(config);
-	</script>
 	<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
@@ -210,12 +199,7 @@
 
 	<!-- Leave out Storage -->
 	<!-- <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-storage.js"></script> -->
-	<script>
-		var config = {
-			// ...
-		};
-		firebase.initializeApp(config);
-	</script>
+	<script type="text/javascript" src="assets/js/fecianalyst.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
