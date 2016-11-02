@@ -51,6 +51,7 @@
 			</div>
 			<div class="row">
 				<canvas id="lineChart"></canvas>
+				<canvas id="barChart"></canvas>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -204,13 +205,43 @@
 		});
 	</script>
 	<script type="text/javascript">
+	const CHART1 = document.getElementById("barChart");
+	let barChart = new Chart(CHART1, {
+		type: 'bar',
+		data: {
+			labels: ["Neuroticism", "Extraversion", "Psicoticism"],
+			datasets: [{
+				label: "Carlos Cruz EPQ Scale Levels",
+				data: [2, 1, 2],
+				backgroundColor: "rgba(102,153,153,0.4)",
+				hoverBorderWidth: [5,5,5],
+			}]
+		},
+		options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true,
+							max: 2,
+              min: 0,
+							stepSize: 1,
+							scaleLabel: function (valuePayload) {
+    return Number(valuePayload.value).toFixed(2).replace('.',',') + '$';
+}
+
+						}
+					}]
+				}
+		},
+	});
+	</script>
+	<script type="text/javascript">
 		const CHART = document.getElementById("lineChart");
 		let lineChart = new Chart(CHART, {
 			type: 'line',
 			data: {
 				labels: ["Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"],
 				datasets: [{
-
 					label: "Carlos Cruz EPQ Scores",
 					fill: true,
 					lineTension: .1,
