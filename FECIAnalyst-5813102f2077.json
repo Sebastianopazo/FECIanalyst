@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fecianalyst",
+  "private_key_id": "5813102f2077c56d6737ccdd54a9a8328f48e7e1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDtmU2HHUiP3k6s\nmpu99cX8L3VRpcHKOU5LeyLvJOX3Xhjt81BYcykaNuGSTgvAp9FVD23bt/A0a3de\njd4fiYD/b1IvbSdDrTRH8JQqdGUveT8Uij5bD+atDp4aSLI25IAggRxPEEqkwDzJ\nrYY64HFJahvhH+AXgOUr1cxxVH5iKEspUcpPH/5TtzqTQa+UrtexWCG5Fz4b7rSR\nGlD10/PmKUNl/NnbFavl7VTn3sndcXz66h4FEOIZXDvPtCf1KXZBG9Fu9JU73gCq\ngDzCj8zMqHUMAl7uiOIYH3f+UaRqGhbFoTCmWYJnMjT9bbRYJuerF4rnDw0FAwZ3\nETYVN+URAgMBAAECggEAERjzB0IIMrIgnzMQ+f5xnNAddR6kb1ToWW4m+WaCVeaj\njJvxsCu5TXWdjdWn6tkoqyJNGX6G/n6tPFShI0vVyIvOMjN8m9Ye6P5a6yMtFNl4\nvJWmHw9p3hIrNmD80g5nWe9whg/6Dxj2Rt0Bx8LW5B2KnAybJ5XS5/CeoZke7xkr\nsL28Irsl/D1Akk04GOkc3ko7C2DVsmcaGsiaMMbiHkeS3rQ0JbDVLp1RwOZaDLXJ\nOAJ4K8eVabbWKveNP7dHrzbcWjCs5QCOdG2hQD40WkDkKfiG4kR/Xkrf3xMBx0Gu\n66JIVFvH5B1ll58ye8z/YcQQwjMQPkp9MftjMvfnAQKBgQD27klSvvKSLLc06ewe\ndlbVg19byym7u5wBkbnRA6ZnEVajLl+9GDi8POftXfewoOQEgn78izsLOW1WJpF+\n4e4+YNbcywIr4vJNksWO/VgdOO39IZiEc0LqQKCgOCRkpzOKVS5M7CrkeaNusmlp\naFAtcW/qUpLFIUGi3VYnAOymmQKBgQD2U0ZNagA4Sm8meQiSTkO389Q47DJ/z+LZ\nHFNrPlVYcGpW63NEnGCUfotbCqgv3or6N/JlGXEGW0BUFWQ5EvxIPiZdBkChDzvZ\n5/SP6+WTwlgxaL9bhinegLzTU1/LeOMsZReyE9ojeHP5ey1vCQ3sczme7+h/ZvkA\nx4OgNqZVOQKBgQCfZahdSreJFmZZONtbuqZJA5nNxnK1JeEJvkkFnGaRR8b2ZVwV\n04nkMSjBuBPIp8MpChfw6+t8TmC+6PyovC0vhRGNy1omfERPQPxYVj/H9VTjPwmW\nDlVWo8tMQZF0i94gYOYXb6gsfjy6m16iVVzUSNKmnxDxQYt+F4Sift1EmQKBgQDc\nwIKXrDCoQeTc2MlavPMpb0Y5AUy8iKTnJ+CGkuVPjedvIDE8Qty3F7VyENnrlIh+\neBcujZ9iL/M1p7obAC3B3Jjq80iGTq23uo3NUX58bkY1eYdM0a7CLiOLTAPkyODm\nj26t8+ahtThSVBbClJ260wTHsH9vdewfy63lrjRg2QKBgQChQtTBod/52GWyohda\nnF5bonwZwHCAwBxvrk90haLyvxRrTKVtORfjnzbLL2maTjlzhd7ARY9YxerIG8tA\noBtoGUj2xoHfEk/S/uMKZ/hqiYwr11XCJE0K97UrD9xg8wvk7tyBryLZ5h4KBqnl\n3Mu0/Cu+zFKkYYRpRUhLH6v7YA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "sropazo@fecianalyst.iam.gserviceaccount.com",
+  "client_id": "111210198670083903192",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sropazo%40fecianalyst.iam.gserviceaccount.com"
+}
