@@ -50,7 +50,6 @@ btnLogout.addEventListener('click', e =>{
 // add a realtime listener
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if (firebaseUser) {
-    window.alert('Succesfully logged in');
     console.log(firebaseUser);
     btnLogout.classList.remove('hide');
     loginInfo.classList.add('hide');
@@ -61,3 +60,12 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
     loginInfo.classList.remove('hide');
   }
 });
+
+document.getElementById("btnLogin").onclick = function() {toDashboard()};
+function toDashboard() {
+  firebase.auth().onAuthStateChanged(firebaseUser =>{
+    if (firebaseUser) {
+        window.location = 'dashboard.html';
+    }
+  });
+  }
