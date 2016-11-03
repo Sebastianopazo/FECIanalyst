@@ -37,15 +37,17 @@
 		</div>
 	</header>
 	<div class="site-hero_2">
+		<div class="col-md-12">
+		</div>
+		<a href="index.html">
+		</a>
 		<div class="page-title">
 			<div class="big-title montserrat-text uppercase">
-				<div class="logo">
-					<a href="#"><img src="images/sebastian.png" alt="logo" id="logo"></a>
-				</div>Welcome Sebastian</div>
+				<div id="logo">
+				</div>Sebastian Opz</div>
 			<div class="small-title montserrat-text uppercase">HOME/Dashboard</div>
 		</div>
 	</div>
-
 	<section>
 		<div class="section-title">
 			<span>Your Patients</span>
@@ -58,7 +60,7 @@
 			</div>
 			<div class="row">
 				<div class="widget wow fadeInUp">
-					<ul class="list">
+					<ul id="patientList" class="list">
 						<li><a href="carloscruz.html">Carlos Cruz Mancilla<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
 						<li><a href="">Juan Soto Gómez<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
 						<li><a href="">Héctor Bonifacio Echeverría y Cervantes de La Cruz Arroyo Rojas<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
@@ -69,30 +71,35 @@
 		</div>
 	</section>
 	<!-- Login Info -->
-	<section class="green-section wow fadeInUp" style="padding:50px 0">
+	<section id="loginInfo" class="green-section wow fadeInUp" style="padding:50px 0">
 		<div class="container">
 			<div class="col-md-6 col-sm-12">
 				<div class="row">
-					<span class="white-text montserrat-text uppercase" style="font-size:30px;display:block;">
-						Returning User? Login Here!
+					<div class="green-section" style="padding:20px">
+					<span class="white-text montserrat-text uppercase" style="font-size:24px;display:block;">
+						Returning User?
 					</span>
+					<p class="white-text">
+						Login Here!
+					</p>
 					<div class="row">
 						<form action="#" method="post">
 							<div class="col-md-10 spaceup">
-								<div class="input_1" style="margin-bottom:30px">
-									<input type="text" name="name">
-									<span>User Name</span>
+								<div class="input_3" style="margin-bottom:30px">
+									<input id=txtEmail type="text" name="name" autocomplete="off">
+									<span>Email</span>
 								</div>
 							</div>
 							<div class="col-md-10">
-								<div class="input_1" style="margin-bottom:30px">
-									<input type="text" name="name">
+								<div class="input_3" style="margin-bottom:30px">
+									<input id=txtPassword type="password" name="name" autocomplete="off">
 									<span>Password</span>
 								</div>
 							</div>
 					</div>
-					<a href="profile.html" class="btn white" style="margin-top:30px"><span>Login</span></a>
+					<a href="#" id="btnLogin" class="btn white" style="margin-top:30px"><span>Login</span></a>
 					</form>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
@@ -106,40 +113,36 @@
 							<form action="#" method="post">
 								<div class="col-md-6">
 									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="name">
+										<input id="txtEmail2" type="text" name="Email" autocomplete="off">
+										<span>Email</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input type="text" name="Name" autocomplete="off">
 										<span>Name</span>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="email">
+										<input type="text" name="Last Name" autocomplete="off">
 										<span>Last Name</span>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="email">
+										<input type="text" name="email" autocomplete="off">
 										<span>Supervisor</span>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-12">
 									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="email">
-										<span>Class</span>
+										<input id="txtPass2" type="text" name="code" autocomplete="off">
+										<span>Code</span>
 									</div>
 								</div>
 								<div class="col-md-12">
-									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="object">
-										<span>Student Code</span>
-									</div>
-									<div class="input_1" style="margin-bottom:30px">
-										<input type="text" name="object">
-										<span>Faculty Code</span>
-									</div>
-								</div>
-								<div class="col-md-12">
-									<a href="#" class="btn green"><span>Sign Up	</span></a>
+									<a id="btnSignup" href="#" class="btn green"><span>Sign Up	</span></a>
 								</div>
 							</form>
 						</div>
@@ -163,7 +166,6 @@
 					</nav>
 				</div>
 			</div>
-
 			<div class="col-md-4 col-sm-12" style="text-align:right">
 				<div class="row">
 					<div class="uppercase gray-text">
@@ -173,13 +175,11 @@
 						<li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
 						<li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
 						<li><a href="#"><i class="icon ion-social-youtube"></i></a></li>
-
 					</ul>
 				</div>
 			</div>
 		</div>
 	</footer>
-
 	<!-- SCRIPTS -->
 	<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
 	<script type="text/javascript" src="assets/js/fecianalyst.js"></script>
