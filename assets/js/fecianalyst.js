@@ -42,9 +42,15 @@ btnSignUp.addEventListener('click', e => {
   const promise = auth.createUserWithEmailAndPassword(Email2, Pass2);
   promise.catch(e => console.log(e.message))
 });
-
+//sign out
 btnLogout.addEventListener('click', e =>{
   firebase.auth().signOut();
+  firebase.auth().onAuthStateChanged(firebaseUser =>{
+    if (firebaseUser) {
+    } else {
+      window.location = 'index.html';
+    }
+  });
 });
 
 // add a realtime listener
@@ -61,6 +67,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
   }
 });
 
+//on clicking the login button, check if succesful login, redirect to dashboard if true.
 document.getElementById("btnLogin").onclick = function() {toDashboard()};
 function toDashboard() {
   firebase.auth().onAuthStateChanged(firebaseUser =>{
