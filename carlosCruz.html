@@ -52,16 +52,30 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<a href="#" class="btn green"><span><div class="edit2"></div>Edit Info</span></a>
+					<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';" class="btn green"><span><div class="edit2"></div>Edit Info</span></a>
 				</div>
 			</div>
 			<div class="row">
 				<div class="widget wow fadeInUp">
 					<ul class="list_2">
-						<li><div href="">Age<span>13</span></div></li>
-						<li><div href="">Date of Admission<span>9/20/2013</span></div></li>
-						<li><div href="">Phone Number<span>5552314353</span></div></li>
-						<li><div href="">Patient Number<span>P503445</span></div></li>
+						<li>
+							<div href="">Name<span>Carlos</span></div>
+						</li>
+						<li>
+							<div href="">Last Name<span>Cruz</span></div>
+						</li>
+						<li>
+							<div href="">Second Lastname<span>Navarrete</span></div>
+						</li>
+						<li>
+							<div href="">Age<span>15</span></div>
+						</li>
+						<li>
+							<div href="">Record Number<span>1313421</span></div>
+						</li>
+						<li>
+							<div href="">Intake Date<span>3/3/2013</span></div>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -74,7 +88,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<a href="carlosCruzForm.html" class="btn green"><span><div class="plus"></div>Add Measure</span></a>
+					<a ref="javascript:void(0)" onclick="document.getElementById('light2').style.display='block';document.getElementById('fade2').style.display='block';" class="btn green"><span><div class="plus"></div>Add Measure</span></a>
 				</div>
 			</div>
 			<div class="row">
@@ -189,7 +203,6 @@
 					</nav>
 				</div>
 			</div>
-
 			<div class="col-md-4 col-sm-12" style="text-align:right">
 				<div class="row">
 					<div class="uppercase gray-text">
@@ -199,13 +212,60 @@
 						<li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
 						<li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
 						<li><a href="#"><i class="icon ion-social-youtube"></i></a></li>
-
 					</ul>
 				</div>
 			</div>
 		</div>
 	</footer>
-
+	<!--hidden lightbox form for editing patients-->
+	<div id="light" class="white_content wow fadeInUp">
+		<h2 class="small-title montserrat-text uppercase">
+			Edit Patient Information:
+		<h2>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" value="Carlos" name="Carlos" autocomplete="off" readonly="readonly">
+			<span class="active">Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Last Name" value="Cruz" autocomplete="off"  readonly="readonly">
+			<span class="active">Last Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Second Last Name" value="Navarrete" autocomplete="off"  readonly="readonly">
+			<span class="active">Second Last Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Age" value="15" autocomplete="off"  readonly="readonly">
+			<span class="active">Age</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Record Number" value="1313421" autocomplete="off"  readonly="readonly">
+			<span class="active">Record Number</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="date" name="Intake date" value="2013-03-03" autocomplete="off">
+				<span class="active">Intake Date</span>
+		</div>
+		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Save Changes</a>
+				<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Edit Information</a>
+		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Close</a>
+	</div>
+	<div id="fade" class="black_overlay"></div>
+	<!--hidden lightbox form for adding measures-->
+	<div id="light2" class="white_content wow fadeInUp">
+		<h2 class="small-title montserrat-text uppercase">
+			Add Measures:
+		<h2>
+			<select name="cars">
+		 <option value="choose">Choose an option</option>
+     <option value="EPQ">Eysenck's EPQ</option>
+     <option value="saab">Gambrill and Ritchie's Assertion Inventory</option>
+   </select>
+		<a href="javascript:void(0)" onclick="document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'" class="btn green2">Save Changes</a>
+				<a href="carlosCruzEpq.html" class="btn green2">Start Measure</a>
+		<a href="javascript:void(0)" onclick="document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'" class="btn green2">Close</a>
+	</div>
+	<div id="fade2" class="black_overlay"></div>
 	<!-- SCRIPTS -->
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>

@@ -55,7 +55,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'; location.href = '#light';" class="btn green"><span>Add Patient</span></a>
+					<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';" class="btn green"><span>Add Patient</span></a>
 				</div>
 			</div>
 			<div class="row">
@@ -180,9 +180,8 @@
 			</div>
 		</div>
 	</footer>
-
 	<!--hidden lightbox form for adding patients-->
-	<div id="light" class="white_content">
+	<div id="light" class="white_content wow fadeInUp">
 		<h2 class="small-title montserrat-text uppercase">
 			Add Patient Information:
 		<h2>
@@ -208,6 +207,7 @@
 		</div>
 		<div class="input_1" style="margin-bottom:30px">
 			<input type="date" name="Intake date" autocomplete="off">
+			<span class="active">Intake Date</span>
 		</div>
 		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Save Information</a>
 		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Close</a>
@@ -228,6 +228,7 @@
 			new WOW().init();
 		});
 	</script>
+
 </body>
 
 </html>

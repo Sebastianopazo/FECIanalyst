@@ -1,8 +1,4 @@
-/*
-	Javascript File for AKAD Template
-	Author : Akhouad-me
-	Web    : www.akhouad.me
-*/
+
 
 (function($){
 	$(window).load(function(){
