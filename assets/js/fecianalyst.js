@@ -72,7 +72,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 
 //get elements from html
 const patientList = document.getElementById('patientList');
-//create references
+//create references... don't know how to reference a specific path
 const dbRefUsers = firebase.database().ref().child('users');
 const dbRefSebastian = dbRefUsers.child('8txthHri2GPSV01e5LD36jnRIAw1');
 const dbRefList = dbRefSebastian.child('patientList');
