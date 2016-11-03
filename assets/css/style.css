@@ -489,7 +489,21 @@ ul.tags li a:hover{
 	background-color: #f2f2f2;
 	color:#60606e;
 }
-
+/*list 4*/
+ul.list4 li{
+	list-style: none;
+	position: relative;
+	padding-left: 20px;
+	margin-bottom: 10px;
+}
+ul.list4 li:last-child{margin-bottom: 0}
+ul.list4 li:before{
+	font-family: "Ionicons";
+	content: '\f374';
+	position: absolute;
+	left: 0;
+	color:#84aabc;
+}
 /*social icons*/
 ul.social-icons li{
 	list-style: none;
