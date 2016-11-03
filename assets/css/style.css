@@ -181,7 +181,7 @@ input.radio:focus ~ label:before {
 	box-shadow: 0 0 0 3px #999;
 }
 
-#lineChart {
+#barChart {
   border: black solid;
   margin-bottom: 50px;
 }
@@ -393,25 +393,10 @@ ul.social-icons li a:hover{
 /*list 1*/
 ul.list li{
 	list-style: none;
-	position: relative;
-	padding-left: 20px;
-	margin-bottom: 10px;
-}
-ul.list li:last-child{margin-bottom: 0}
-ul.list li:before{
-	font-family: "Ionicons";
-	content: '\f374';
-	position: absolute;
-	left: 0;
-	color:#84aabc;
-}
-/*list 2*/
-ul.list_2 li{
-	list-style: none;
 	float: left;
 	width: 100%;
 }
-ul.list_2 li a{
+ul.list li a{
 	display: inline-block;
 	padding: 20px;
 	border-bottom: solid 1px #bfbfbf;
@@ -419,11 +404,37 @@ ul.list_2 li a{
 	-webkit-transition:all .2s ease-in-out;
 	transition:all .2s ease-in-out;
 }
-ul.list_2 li:first-child a{border-top:solid 1px #bfbfbf;}
-ul.list_2 li a > span{
+ul.list li:first-child a{border-top:solid 1px #bfbfbf;}
+ul.list li a > span{
 	float: right;
 }
-ul.list_2 li a:hover{border-bottom: solid 1px #84aabc;}
+ul.list li a:hover{
+  border-bottom: solid 5px #84aabc;
+  font-weight: bold;
+    background-color: #F2F2F2;
+}
+/*list 2*/
+ul.list_2 li{
+	list-style: none;
+	float: left;
+	width: 100%;
+}
+ul.list_2 li div{
+	display: inline-block;
+	padding: 20px;
+	border-bottom: solid 1px #bfbfbf;
+	width: 100%;
+	-webkit-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+}
+ul.list_2 li:first-child div{border-top:solid 1px #bfbfbf;}
+ul.list_2 li div > span{
+	float: right;
+}
+ul.list_2 li div:hover{
+  background-color: #F2F2F2;
+  font-weight: bold;
+}
 /*list 3 (tags)*/
 ul.tags{
 	float: left;
@@ -488,6 +499,14 @@ ul.social-icons li a{
 .btn.green{
 	background-color: #84aabc;
 	color:#fff;
+}
+.btn.green2{
+  padding-left: 20px;
+  padding-right: 20px;
+	background-color: #84aabc;
+	color:#fff;
+  margin-bottom: 40px;
+  margin-right: 20px;
 }
 .btn.white{
 	background-color: #fff;

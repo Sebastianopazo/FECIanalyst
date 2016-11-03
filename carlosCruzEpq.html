@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="assets/css/animate.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body class="animsition">
 	<header class="main-header">
 		<div class="container">
@@ -49,36 +48,28 @@
 			<div class="section-title">
 				<span>Carlos Cruz Mancilla EPQ</span>
 			</div>
-			<div class="row">
-				<canvas id="lineChart"></canvas>
-				<canvas id="barChart"></canvas>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<a href="#" class="btn green"><span><div class="edit2"></div>Edit Scores</span></a>
-				</div>
-			</div>
+			<div class="col-md-6">
+						<a href="carlosCruz.html" class="btn green2"><span>Back to Carlos Cruz</span></a>
+					<a href="#" class="btn green2"><span><div class="edit2"></div>Edit Scores</span></a>
 			<div class="row">
 				<div class="widget wow fadeInUp">
 					<ul class="list_2">
-						<li><a href="">Item 1 Score<span>65</span></a></li>
-						<li><a href="">Item 2 Score<span>59</span></a></li>
-						<li><a href="">Item 3 Score<span>80</span></a></li>
-						<li><a href="">Item 4 Score<span>81</span></a></li>
-						<li><a href="">Item 5 Score<span>56</span></a></li>
-						<li><a href="">Item 6 Score<span>55</span></a></li>
-						<li><a href="">Item 7 Score<span>50</span></a></li>
-						<li><a href="">Item 8 Score<span>52</span></a></li>
-						<li><a href="">Item 9 Score<span>53</span></a></li>
-						<li><a href="">Item 10 Score<span>55</span></a></li>
+						<li><div>Item 1 Score<span>65</span></div></li>
+						<li><div>Item 2 Score<span>59</span></div></li>
+						<li><div>Item 3 Score<span>80</span></div></li>
+						<li><div>Item 4 Score<span>81</span></div></li>
+						<li><div>Item 5 Score<span>56</span></div></li>
+						<li><div>Item 6 Score<span>55</span></div></li>
+						<li><div>Item 7 Score<span>50</span></div></li>
+						<li><div>Item 8 Score<span>52</span></div></li>
+						<li><div>Item 9 Score<span>53</span></div></li>
+						<li><div>Item 10 Score<span>55</span></div></li>
 					</ul>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<a href="carlosCruz.html" class="btn green"><span>Back to Carlos Cruz</span></a>
-				</div>
-			</div>
+		</div>
+		<div class="col-md-6">
+			<canvas height="300" id="barChart"></canvas>
 		</div>
 	</section>
 	<!-- Login Info -->
@@ -190,9 +181,7 @@
 			</div>
 		</div>
 	</footer>
-
 	<!-- SCRIPTS -->
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
@@ -209,92 +198,42 @@
 	let barChart = new Chart(CHART1, {
 		type: 'bar',
 		data: {
-			labels: ["Neuroticism", "Extraversion", "Psicoticism"],
+			labels: ["Neuroticism", "Extraversion", "Psicoticism", "Social desirability"],
 			datasets: [{
 				label: "Carlos Cruz EPQ Scale Levels",
-				data: [2, 1, 2],
+				data: [2, 1, 2, 2],
 				backgroundColor: "rgba(102,153,153,0.4)",
 				hoverBorderWidth: [5,5,5],
 			}]
 		},
 		options: {
+				tooltips: {
+				},
+				title: {
+					display: true,
+					fontSize: 15,
+				},
 				scales: {
 					yAxes: [{
 						ticks: {
+							callback: function(value, index, values) {
+							if (value === 1) {
+								return "Medium";
+							} else if (value === 0) {
+								return "Low"
+							} else {
+								return "High"
+							}
+							},
 							beginAtZero: true,
 							max: 2,
               min: 0,
 							stepSize: 1,
-							scaleLabel: function (valuePayload) {
-    return Number(valuePayload.value).toFixed(2).replace('.',',') + '$';
-}
-
 						}
 					}]
 				}
 		},
 	});
-	</script>
-	<script type="text/javascript">
-		const CHART = document.getElementById("lineChart");
-		let lineChart = new Chart(CHART, {
-			type: 'line',
-			data: {
-				labels: ["Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"],
-				datasets: [{
-					label: "Carlos Cruz EPQ Scores",
-					fill: true,
-					lineTension: .1,
-					backgroundColor: "rgba(102,153,153,0.4)",
-					borderColor: "rgba(102,153,153,1)",
-					borderCapStyle: 'round',
-					borderDash: [],
-					borderDashOffset: 0.0,
-					borderJoinStyle: 'round',
-					pointBorderColor: "rgba(102,153,153,1)",
-					pointBackgroundColor: "#fff",
-					pointBorderWidth: 5,
-					pointHoverRadius: 5,
-					pointHoverBackgroundColor: "rgba(102,153,153,1)",
-					pointHoverBorderColor: "rgba(102,153,153,1)",
-					pointHoverBorderWidth: 2,
-					pointRadius: 1,
-					pointHitRadius: 10,
-					data: [65, 59, 80, 81, 56, 55, 40, 33, 30, 45],
-					spanGaps: false,
-				}, {
-					label: "EPQ Norms Scores",
-					fill: true,
-					lineTension: .1,
-					backgroundColor: "rgba(102,51,102,0.4)",
-					borderColor: "rgba(102,51,102,1)",
-					borderCapStyle: 'round',
-					borderDash: [],
-					borderDashOffset: 0.0,
-					borderJoinStyle: 'round',
-					pointBorderColor: "rgba(102,51,102,1)",
-					pointBackgroundColor: "#fff",
-					pointBorderWidth: 5,
-					pointHoverRadius: 5,
-					pointHoverBackgroundColor: "rgba(102,51,102,1)",
-					pointHoverBorderColor: "rgba(102,51,102,1)",
-					pointHoverBorderWidth: 2,
-					pointRadius: 1,
-					pointHitRadius: 10,
-					data: [30, 30, 31, 23, 44, 44, 50, 52, 53, 55],
-					spanGaps: false,
-				}]
-			},
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
-				}
-			}
-		});
 	</script>
 </body>
 
