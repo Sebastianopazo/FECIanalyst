@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="assets/css/animate.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
-
+<!--body-->
 <body class="animsition">
 	<header class="main-header">
 		<div class="container">
@@ -23,7 +23,9 @@
 						<li><a href="about.html" class="animsition-link">about FECI</a></li>
 						<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
 						<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
-						<li id="btnLogout"><div class="animsition-link">Logout</div></li>
+						<li id="btnLogout">
+							<div class="animsition-link">Logout</div>
+						</li>
 					</ul>
 				</nav>
 				<!-- mobile navbar -->
@@ -76,29 +78,29 @@
 			<div class="col-md-6 col-sm-12">
 				<div class="row">
 					<div class="green-section" style="padding:20px">
-					<span class="white-text montserrat-text uppercase" style="font-size:24px;display:block;">
+						<span class="white-text montserrat-text uppercase" style="font-size:24px;display:block;">
 						Returning User?
 					</span>
-					<p class="white-text">
-						Login Here!
-					</p>
-					<div class="row">
-						<form action="#" method="post">
-							<div class="col-md-10 spaceup">
-								<div class="input_3" style="margin-bottom:30px">
-									<input id=txtEmail type="text" name="name" autocomplete="off">
-									<span>Email</span>
+						<p class="white-text">
+							Login Here!
+						</p>
+						<div class="row">
+							<form action="#" method="post">
+								<div class="col-md-10 spaceup">
+									<div class="input_3" style="margin-bottom:30px">
+										<input id=txtEmail type="text" name="name" autocomplete="off">
+										<span>Email</span>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-10">
-								<div class="input_3" style="margin-bottom:30px">
-									<input id=txtPassword type="password" name="name" autocomplete="off">
-									<span>Password</span>
+								<div class="col-md-10">
+									<div class="input_3" style="margin-bottom:30px">
+										<input id=txtPassword type="password" name="name" autocomplete="off">
+										<span>Password</span>
+									</div>
 								</div>
-							</div>
-					</div>
-					<a href="#" id="btnLogin" class="btn white" style="margin-top:30px"><span>Login</span></a>
-					</form>
+						</div>
+						<a href="#" id="btnLogin" class="btn white" style="margin-top:30px"><span>Login</span></a>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -211,7 +213,6 @@
 		</div>
 		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Save Information</a>
 		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Close</a>
-
 	</div>
 	<div id="fade" class="black_overlay"></div>
 
@@ -228,7 +229,6 @@
 			new WOW().init();
 		});
 	</script>
-
 </body>
 
 </html>
