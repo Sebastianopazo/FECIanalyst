@@ -92,13 +92,25 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<a ref="javascript:void(0)" onclick="document.getElementById('light2').style.display='block';document.getElementById('fade2').style.display='block';" class="btn green"><span><div class="plus"></div>Add Measure</span></a>
+					<a href="javascript:void(0)" onclick="document.getElementById('light2').style.display='block';document.getElementById('fade2').style.display='block';" class="btn green"><span><div class="plus"></div>Add Measure</span></a>
 				</div>
 			</div>
 			<div class="row">
 				<div class="widget wow fadeInUp">
 					<ul class="list">
-						<li><a href="carloscruzEPQ.html">EPQ<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
+						<li>
+							<a href="javascript:void(0)" onclick="document.getElementById('light3').style.display='block';document.getElementById('fade3').style.display='block';">
+								EPQ
+									<span>
+										<div class="info">
+										</div>
+										<div class="edit">
+										</div>
+										<div class="delete">
+										</div>
+									</span>
+								</a>
+							</li>
 						<li><a href="">Self-Esteem Scale<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
 						<li><a href="">Rathus Assertiveness Schedule<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
 						<li><a href="">Gambrill & Ritchie Assertion Inventory <span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
@@ -266,13 +278,147 @@
      <option value="saab">Gambrill and Ritchie's Assertion Inventory</option>
    </select>
 		<a href="javascript:void(0)" onclick="document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'" class="btn green2">Save Changes</a>
-				<a href="carlosCruzEpq.html" class="btn green2">Start Measure</a>
+				<a href="javascript:void(0)" onclick="document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'" class="btn green2">Start Measure</a>
 		<a href="javascript:void(0)" onclick="document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'" class="btn green2">Close</a>
 	</div>
 	<div id="fade2" class="black_overlay"></div>
+	<!--hidden lightbox form for adding epq-->
+	<div id="light3" class="white_content wow fadeInUp">
+		<h2 class="small-title montserrat-text uppercase">
+			Add EPQ Information:
+		<h2>
+			<!--Question -->
+				<div class="row">
+					<ul class="list_5">
+						<li>
+							<div>
+								<p>
+									1.-Do you often long for excitement?
+								</p>
+								<div>
+									<input type="radio" name="radio" id="radio1" class="radio"/>
+	            		<label for="radio1">Yes</label>
+								</div>
+								<div>
+									<input type="radio" name="radio" id="radio2" class="radio"/>
+		            	<label for="radio2">No</label>
+								</div>
+								<div>
+									<input type="radio" name="radio" id="radio3" class="radio"/>
+            				<label for="radio3">Not answered</label>
+									</div>
+								</div>
+						</li>
+					</ul>
+				</div>
+				<!--End Of Question -->
+				<!--Question -->
+					<div class="row">
+						<ul class="list_5">
+							<li>
+								<div>
+									<p>
+										2.-Do you often need understanding friends to cheer you up?
+									</p>
+									<div>
+										<input type="radio" name="radio" id="radio1" class="radio"/>
+		            		<label for="radio1">Yes</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio2" class="radio"/>
+			            	<label for="radio2">No</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio3" class="radio"/>
+	            				<label for="radio3">Not answered</label>
+										</div>
+									</div>
+							</li>
+						</ul>
+					</div>
+					<!--End Of Question -->
+					<!--Question -->
+						<div class="row">
+							<ul class="list_5">
+								<li>
+									<div>
+										<p>
+											3.- Are you usually carefree?
+										</p>
+										<div>
+											<input type="radio" name="radio" id="radio1" class="radio"/>
+			            		<label for="radio1">Yes</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio2" class="radio"/>
+				            	<label for="radio2">No</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio3" class="radio"/>
+		            				<label for="radio3">Not answered</label>
+											</div>
+										</div>
+								</li>
+							</ul>
+						</div>
+						<!--End Of Question -->
+						<!--Question -->
+							<div class="row">
+								<ul class="list_5">
+									<li>
+										<div>
+											<p>
+												4.- Do you find it very hard to take no for answer?
+											</p>
+											<div>
+												<input type="radio" name="radio" id="radio1" class="radio"/>
+												<label for="radio1">Yes</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio2" class="radio"/>
+												<label for="radio2">No</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio3" class="radio"/>
+													<label for="radio3">Not answered</label>
+												</div>
+											</div>
+									</li>
+								</ul>
+							</div>
+							<!--End Of Question -->
+							<!--Question -->
+								<div class="row">
+									<ul class="list_5">
+										<li>
+											<div>
+												<p>
+													5.- Do you stop and think things over before doing anything?
+												</p>
+												<div>
+													<input type="radio" name="radio" id="radio1" class="radio"/>
+													<label for="radio1">Yes</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio2" class="radio"/>
+													<label for="radio2">No</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio3" class="radio"/>
+														<label for="radio3">Not answered</label>
+													</div>
+												</div>
+										</li>
+									</ul>
+								</div>
+								<!--End Of Question -->
+				<a href="carlosCruzEpq.html" class="btn green2">Save</a>
+				<a href="javascript:void(0)" onclick="document.getElementById('light3').style.display='none';document.getElementById('fade3').style.display='none'" class="btn green2">Close</a>
+		</div>
+
+	<div id="fade3" class="black_overlay"></div>
 	<!-- SCRIPTS -->
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>

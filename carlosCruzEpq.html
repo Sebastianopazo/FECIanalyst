@@ -303,6 +303,40 @@
 			</div>
 		</div>
 	</footer>
+	<!--hidden lightbox form for adding EPQ scores -->
+	<div id="light" class="white_content wow fadeInUp">
+		<h2 class="small-title montserrat-text uppercase">
+			Add EPQ Scores:
+		<h2>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" value="Carlos" name="Carlos" autocomplete="off" readonly="readonly">
+			<span class="active">Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Last Name" value="Cruz" autocomplete="off"  readonly="readonly">
+			<span class="active">Last Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Second Last Name" value="Navarrete" autocomplete="off"  readonly="readonly">
+			<span class="active">Second Last Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Age" value="15" autocomplete="off"  readonly="readonly">
+			<span class="active">Age</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Record Number" value="1313421" autocomplete="off"  readonly="readonly">
+			<span class="active">Record Number</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="date" name="Intake date" value="2013-03-03" autocomplete="off">
+				<span class="active">Intake Date</span>
+		</div>
+		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Save Changes</a>
+				<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Edit Information</a>
+		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Close</a>
+	</div>
+	<div id="fade" class="black_overlay"></div>
 	<!-- SCRIPTS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>

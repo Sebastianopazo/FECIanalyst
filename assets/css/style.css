@@ -219,9 +219,11 @@
 /*end of misc classes and ID's*/
 /* Form with styled radio inputs*/
 label {
-  width: 200px;
+  min-width: 100px;
   border-radius: 3px;
-  border: 1px solid #D1D3D4
+  border: 1px solid #D1D3D4;
+	font-size: 12px;
+	padding-right: 10px;
 }
 
 input.radio:empty {
@@ -230,10 +232,8 @@ input.radio:empty {
 
 input.radio:empty ~ label {
 	position: relative;
-	float: left;
 	line-height: 2.5em;
 	text-indent: 3.25em;
-	margin-top: 2em;
 	cursor: pointer;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -503,6 +503,32 @@ ul.list4 li:before{
 	left: 0;
 	color:#84aabc;
 }
+/*list 5*/
+ul.list_5 {
+	margin-top: 20px;
+}
+
+ul.list_5 li{
+	list-style: none;
+	float: left;
+	width: 100%;
+	font-size: 18px;
+}
+
+ul.list_5 li div div {
+	display: inline-block;
+	margin-left: 20px;
+}
+ul.list_5 li div p {
+	margin-left: 20px;
+	border-top: solid 1px #bfbfbf;
+}
+
+
+ul.list_5 li div > span{
+	float: right;
+}
+
 /*social icons*/
 ul.social-icons li{
 	list-style: none;
