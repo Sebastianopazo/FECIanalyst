@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <!--body-->
+
 <body class="animsition">
 	<header class="main-header">
 		<div class="container">
@@ -45,264 +46,150 @@
 		</div>
 	</div>
 	<section>
-		<div class="container">
-			<div class="section-title">
-				<span>Carlos Cruz Mancilla EPQ</span>
-			</div>
-			<div class="col-md-6">
-						<a href="carlosCruz.html" class="btn green2"><span>Back to Carlos Cruz</span></a>
-					<a href="#" class="btn green2"><span><div class="edit2"></div>Edit Scores</span></a>
-			<div class="row">
-				<div class="widget wow fadeInUp">
-					<ul class="list_2">
-						<li><div>Item 1 Score<span>65</span></div></li>
-						<li><div>Item 2 Score<span>59</span></div></li>
-						<li><div>Item 3 Score<span>80</span></div></li>
-						<li><div>Item 4 Score<span>81</span></div></li>
-						<li><div>Item 5 Score<span>56</span></div></li>
-						<li><div>Item 6 Score<span>55</span></div></li>
-						<li><div>Item 7 Score<span>50</span></div></li>
-						<li><div>Item 8 Score<span>52</span></div></li>
-						<li><div>Item 9 Score<span>53</span></div></li>
-						<li><div>Item 10 Score<span>55</span></div></li>
-					</ul>
-				</div>
-			</div>
+		<div class="section-title">
+			<span>Carlos Cruz Mancilla</span>
 		</div>
-		<div class="col-md-6">
-			<canvas height="300" id="barChart"></canvas>
-		</div>
-	</section>
-
-	<!-- PORTFOLIO -->
-		<section class="portfolio">
+		<!-- TOOLTIPS -->
+		<section class="tooltips">
 			<div class="container">
 				<!-- categories  -->
 				<div class="col-md-3">
 					<div class="row categories-grid wow fadeInLeft">
-						<span class="montserrat-text uppercase">choose category</span>
-
+						<span class="montserrat-text uppercase">EPQ REPORT</span>
 						<nav class="categories">
-							<ul class="portfolio_filter">
+							<ul class="tooltips_filter">
 								<li><a href="" class="active" data-filter="*">all</a></li>
-								<li><a href="" data-filter=".photography">photography</a></li>
-								<li><a href="" data-filter=".web">webdesign</a></li>
-								<li><a href="" data-filter=".logo">logo</a></li>
-								<li><a href="" data-filter=".graphics">graphics</a></li>
-								<li><a href="" data-filter=".ads">advertising</a></li>
-								<li><a href="" data-filter=".fashion">fashion</a></li>
+								<li><a href="" data-filter=".scores">Scores</a></li>
+								<li><a href="" data-filter=".chart">Chart</a></li>
+								<li><a href="" data-filter=".dimensions">Dimensions</a></li>
 							</ul>
 						</nav>
 					</div>
+									<a href="carlosCruz.html" class="btn green3"><span>Back to Carlos Cruz</span></a>
 				</div>
-
-				<!-- all works -->
+				<!-- all tooltips -->
 				<div class="col-md-9">
-					<div class="row portfolio_container">
-						<!-- single work -->
-						<div class="col-md-4 photography">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp">
-								<img src="assets/img/work-1.jpg" alt="image">
-								<div class="portfolio_item_hover">
+					<div class="row tooltips_container">
+						<!-- single tooltip -->
+						<div class="col-md-6 chart">
+							<a href="#" class="tooltips_item2 wow fadeInUp" data-wow-delay=".1s">
+								<canvas height="410" width="400" id="barChart"></canvas>
+							</a>
+						</div>
+						<!-- end single tootltip -->
+						<!-- single tooltip -->
+						<div class="col-md-5 scores">
+							<a href="#" class="tooltips_item wow fadeInUp">
+								<div id="scoreSummary">
+									<h2>Score Summary</h2>
+									<ul class="list_2">
+										<li>
+											<div>Neuroticism Score<span>65</span></div>
+										</li>
+										<li>
+											<div>Extraversion Score<span>59</span></div>
+										</li>
+										<li>
+											<div>Psicoticism Score<span>80</span></div>
+										</li>
+										<li>
+											<div>Social desirability Score<span>81</span></div>
+										</li>
+										<li>
+											<div><b>Overall Score</b><span><b>81</b></span></div>
+										</li>
+									</ul>
+								</div>
+								<div class="tooltips_item_hover">
 									<div class="item_info">
-										<span>Brave man</span>
-										<em>photography</em>
+										<span>See scores</span>
+										<em>Scores</em>
 									</div>
 								</div>
 							</a>
 						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 fashion logo">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".1s">
-								<img src="assets/img/work-2.jpg" alt="image">
-								<div class="portfolio_item_hover">
+						<!-- end single tooltip -->
+						<!-- single tooltip -->
+						<div class="col-md-6 dimensions">
+							<a href="#" class="tooltips_item3 wow fadeInUp">
+								<div id="extraversion">
+									<h2>Medium Extraversion</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+										irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+									</p>
+								</div>
+								<div class="tooltips_item_hover">
 									<div class="item_info">
-										<span>super man</span>
-										<em>photography</em>
+										<span>More about Extraversion</span>
+										<em>EPQ INFO</em>
 									</div>
 								</div>
 							</a>
 						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 ads graphics">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".2s">
-								<img src="assets/img/work-3.jpg" alt="image">
-								<div class="portfolio_item_hover">
+						<!-- end single tooltip -->
+						<!-- single tooltip -->
+						<div class="col-md-6 dimensions">
+							<a href="#" class="tooltips_item3 wow fadeInUp">
+								<div id="neuroticism">
+									<h2>High Neuroticism</h2>
+									<p>Neuroticism or emotionality is characterized by <b>high levels of negative affect such as depression and anxiety</b>. Neuroticism, according to Eysenck's theory, is based on activation thresholds in the sympathetic nervous system or visceral
+										brain. This is the part of the brain that is responsible for the fight-or-flight response in the face of danger. <b>Neurotic people are easily nervous or upset.</b>
+									</p>
+								</div>
+								<div class="tooltips_item_hover">
 									<div class="item_info">
-										<span>bat man</span>
-										<em>photography</em>
+										<span>More about Neuroticism</span>
+										<em>EPQ INFO</em>
 									</div>
 								</div>
 							</a>
 						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4  fashion ads">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".3s">
-								<img src="assets/img/work-3.jpg" alt="image">
-								<div class="portfolio_item_hover">
+						<!-- end single tooltip -->
+						<!-- single tooltip -->
+						<div class="col-md-6 dimensions">
+							<a href="#" class="tooltips_item3 wow fadeInUp">
+								<div id="psicoticism">
+									<h2>High Psicoticism</h2>
+									<p>Psychoticism is associated not only with the liability to have a <b>psychotic episode</b> (or break with reality), but also with aggression. Psychotic behavior is rooted in the characteristics of <b>toughmindedness, non-conformity, inconsideration, recklessness, hostility, anger and impulsiveness.</b>
+									</p>
+								</div>
+								<div class="tooltips_item_hover">
 									<div class="item_info">
-										<span>spider man</span>
-										<em>photography</em>
+										<span>More about Psychoticism</span>
+										<em>EPQ INFO</em>
 									</div>
 								</div>
 							</a>
 						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 graphics ads">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".4s">
-								<img src="assets/img/work-1.jpg" alt="image">
-								<div class="portfolio_item_hover">
+						<!-- end single tooltip -->
+						<!-- single tooltip -->
+						<div class="col-md-6 dimensions">
+							<a href="#" class="tooltips_item3 wow fadeInUp">
+								<div id="socialDesirability">
+									<h2>Low social desirability</h2>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									</p>
+								</div>
+								<div class="tooltips_item_hover">
 									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
+										<span>More about Social desirability</span>
+										<em>EPQ INFO</em>
 									</div>
 								</div>
 							</a>
 						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 logo web photography">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".5s">
-								<img src="assets/img/work-2.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 ads graphics">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".6s">
-								<img src="assets/img/work-2.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 web fashion photography">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".7s">
-								<img src="assets/img/work-1.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 fashion logo">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".8s">
-								<img src="assets/img/work-1.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 fashion logo">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay=".9s">
-								<img src="assets/img/work-3.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 fashion logo">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay="1s">
-								<img src="assets/img/work-2.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 fashion logo">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay="1.1s">
-								<img src="assets/img/work-1.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 fashion logo">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay="1.2s">
-								<img src="assets/img/work-3.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
-
-						<!-- single work -->
-						<div class="col-md-4 fashion logo">
-							<a href="single-project.html" class="portfolio_item wow fadeInUp" data-wow-delay="1.3s">
-								<img src="assets/img/work-1.jpg" alt="image">
-								<div class="portfolio_item_hover">
-									<div class="item_info">
-										<span>iron man</span>
-										<em>photography</em>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- end single work -->
+						<!-- end single tooltip -->
 					</div>
 					<!-- end row -->
 				</div>
-				<!-- all works end -->
+				<!-- all tooltips end -->
 			</div>
 			<!-- end container -->
 		</section>
-		<!-- portfolio -->
+		<!-- tooltips -->
 
+	</section>
 	<!-- Login Info -->
 	<section class="green-section wow fadeInUp" style="padding:50px 0">
 		<div class="container">
@@ -415,33 +302,32 @@
 	<!-- SCRIPTS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
+	<script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
-
 	<!--chart.js script for charts-->
 	<script type="text/javascript">
-		$(window).load(function() {
-			new WOW().init();
-		});
-	</script>
-	<script type="text/javascript">
-	const CHART1 = document.getElementById("barChart");
-	let barChart = new Chart(CHART1, {
-		type: 'bar',
-		data: {
-			labels: ["Neuroticism", "Extraversion", "Psicoticism", "Social desirability"],
-			datasets: [{
-				label: "Carlos Cruz EPQ Scale Levels",
-				data: [2, 1, 2, 2],
-				backgroundColor: "rgba(102,153,153,0.4)",
-				hoverBorderWidth: [5,5,5],
-			}]
-		},
-		options: {
-				tooltips: {
-				},
+		const CHART1 = document.getElementById("barChart");
+		let barChart = new Chart(CHART1, {
+			type: 'bar',
+			data: {
+				labels: ["Neuroticism", "Extraversion", "Psicoticism", "Social desirability"],
+				datasets: [{
+					label: "Carlos Cruz EPQ Scale Levels",
+					data: [3, 2, 3, 1],
+					backgroundColor: [
+						'rgba(192,170,210, 0.8)',
+						'rgba(241,220,191, 0.8)',
+						'rgba(151,179,191, 0.8)',
+						'rgba(222,201,219, 0.8)'
+					],
+					hoverBorderWidth: [5, 5, 5],
+				}]
+			},
+			options: {
+				responsive: true,
+				tooltips: {},
 				title: {
 					display: true,
 					fontSize: 15,
@@ -450,23 +336,49 @@
 					yAxes: [{
 						ticks: {
 							callback: function(value, index, values) {
-							if (value === 1) {
-								return "Medium";
-							} else if (value === 0) {
-								return "Low"
-							} else {
-								return "High"
-							}
+								if (value === 2) {
+									return "Medium";
+								} else if (value === 1) {
+									return "Low"
+								} else if (value === 3) {
+									return "High"
+								}
 							},
 							beginAtZero: true,
-							max: 2,
-              min: 0,
+							max: 3,
+							min: 0,
 							stepSize: 1,
 						}
 					}]
 				}
-		},
-	});
+			},
+		});
+	</script>
+	<!--script for filtering options-->
+	<script type="text/javascript" charset="utf-8">
+		$(window).load(function() {
+			new WOW().init();
+			// initialize isotope
+			var $container = $('.tooltips_container');
+			$container.isotope({
+				filter: '*',
+			});
+
+			$('.tooltips_filter a').click(function() {
+				$('.tooltips_filter .active').removeClass('active');
+				$(this).addClass('active');
+
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
+					filter: selector,
+					animationOptions: {
+						duration: 500,
+						animationEngine: "jquery"
+					}
+				});
+				return false;
+			});
+		});
 	</script>
 </body>
 
