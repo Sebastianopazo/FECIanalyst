@@ -61,6 +61,7 @@
 
 .chart {
     border: solid black;
+		margin-right: 0;
 }
 
 #logo {
@@ -1211,7 +1212,6 @@ footer.main-footer nav.footer-nav ul li a {
     margin-bottom: 45px;
     margin-left: 50px;
     display: inline-block;
-    min-height: 250px;
 }
 
 .tooltips_item2 {
