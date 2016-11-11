@@ -1600,7 +1600,7 @@ footer.main-footer nav.footer-nav ul li a {
     height: 100%;
     width: 100%;
     border: 0;
-    padding: 0 20px;
+    padding: 10px;
     float: left;
     position: relative;
     background-color: transparent;
@@ -1608,11 +1608,11 @@ footer.main-footer nav.footer-nav ul li a {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     color: white;
+    background-color:#6b6b7b;
+
+
 }
 
-.input_4 {
-    color: white;
-}
 
 
 /*date input */
