@@ -1,3 +1,9 @@
+// login bubble toggle
+$(document).ready(function() {
+    $("#login1").click(function() {
+        $("#loginBubble").fadeToggle("fast");
+    });
+});
 
 
 (function($){
