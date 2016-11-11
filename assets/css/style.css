@@ -37,60 +37,64 @@
     overflow: auto;
 }
 
+
 /*end of Lighbox styles*/
 
+
 /*Login Bubble styles*/
+
 .bubble, .arrow:after {
-  background: #60606e;
-  border: 1px solid white;
+    background: #60606e;
+    border: 1px solid white;
 }
 
 .bubble {
-  margin-top: 73px;
-  margin-left: 230px;
-  display: none;
-  position: absolute;
-  padding: 10px;
-  color: white;
-  text-align: center;
-  font: bold 14px "montserrat-text", Sans-Serif;
-  text-decoration: none;
-  text-transform: uppercase;
-  box-shadow: 0 0 7px black;
+    margin-top: 73px;
+    margin-left: 230px;
+    display: none;
+    position: absolute;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font: bold 14px "montserrat-text", Sans-Serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
 }
+
 .arrow {
-  width: 70px;
-  height: 16px;
-  overflow: hidden;
-  position: absolute;
-  left: 50%;
-  margin-left: -35px;
-  bottom: 80px;
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: 80px;
 }
+
 .arrow:after {
-  content: "";
-  position: absolute;
-  left: 20px;
-  top: 5px;
-  width: 25px;
-  height: 25px;
-  -webkit-box-shadow: 6px 5px 9px -9px black,
-                      5px 6px 9px -9px black;
-  -moz-box-shadow: 6px 5px 9px -9px black,
-                   5px 6px 9px -9px black;
-  box-shadow: 6px 5px 9px -9px black,
-              5px 6px 9px -9px black;
-  -webkit-transform: rotate(45deg);
-  -moz-transform:    rotate(45deg);
-  -ms-transform:     rotate(45deg);
-  -o-transform:      rotate(45deg);
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    -webkit-box-shadow: 6px 5px 9px -9px black, 5px 6px 9px -9px black;
+    -moz-box-shadow: 6px 5px 9px -9px black, 5px 6px 9px -9px black;
+    box-shadow: 6px 5px 9px -9px black, 5px 6px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
 }
+
+
 /*end of Login bubble*/
 
-/*misc classes and ID's*/
-.login {
 
-}
+/*misc classes and ID's*/
+
+.login {}
 
 #neuroticism h2 {
     color: rgba(192, 170, 210, 1);
@@ -110,7 +114,7 @@
 
 .chart {
     border: solid black;
-		margin-right: 0;
+    margin-right: 0;
 }
 
 #logo {
@@ -412,9 +416,10 @@ img {
 }
 
 iframe {
-	margin: 0 auto;
-	display: block;
+    margin: 0 auto;
+    display: block;
 }
+
 
 /*blockquote*/
 
@@ -1580,12 +1585,15 @@ footer.main-footer nav.footer-nav ul li a {
     padding: 5px
 }
 
+
 /*input 4*/
+
 .input_4 {
     height: 30px;
     width: 100%;
     border: solid 1px rgba(0, 0, 0, .1);
     position: relative;
+    color: white;
 }
 
 .input_4 input[type="text"] {
@@ -1599,33 +1607,11 @@ footer.main-footer nav.footer-nav ul li a {
     z-index: 2;
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
-    color: #9a9a9a;
+    color: white;
 }
 
-.input_4>span {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #cdcdcd;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-    z-index: 1;
-}
-
-.input_4>span.active, .textarea_1>span.active {
-    color: #84aabc;
-    font-size: 10px;
-    top: 0px;
-    left: 5px;
-    background-color: #fff;
-    padding: 5px
+.input_4 {
+    color: white;
 }
 
 
