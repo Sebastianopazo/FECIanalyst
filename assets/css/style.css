@@ -94,6 +94,15 @@
 
 /*misc classes and ID's*/
 
+#logoutLi {
+  color: white;
+  background-color: #60606e;
+  margin-top: 27px;
+  line-height: normal;
+  text-align: center;
+  padding: 15px;
+}
+
 #successfulLogout {
   display: none;
   width: 100%;
@@ -1561,7 +1570,7 @@ footer.main-footer nav.footer-nav ul li a {
     background-color: white;
 }
 
-.input_3 input[type="text"], [type="password"] {
+.input_3 input[type="text"], .input_3 input[type="password"] {
     height: 100%;
     width: 100%;
     border: 0;
@@ -1612,7 +1621,7 @@ footer.main-footer nav.footer-nav ul li a {
     color: white;
 }
 
-.input_4 input[type="text"], [type="password"] {
+.input_4 input[type="text"], .input_4 input[type="password"] {
     height: 100%;
     width: 100%;
     border: 0;

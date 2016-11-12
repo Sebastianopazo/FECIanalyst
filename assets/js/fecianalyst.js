@@ -31,14 +31,26 @@ loginBtn.addEventListener('click', e => {
   //sign in
   const promise = auth.signInWithEmailAndPassword(email, pass);
   promise.catch(e => console.log(e.message))
+  $('#txtPassword').val('');
+  $('#txtEmail').val('');
 });
 
-//sign out
+//login bubble login by pressing enter
+
+$('#txtPassword').keypress(function (e) {
+  if (e.keyCode == 13) {
+    document.getElementById('loginBtn').click();
+    return false;
+  }
+});
+
+//Log out
 logoutLi.addEventListener('click', e => {
     firebase.auth().signOut();
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {} else {
-            $("#successfulLogout").delay(3000).fadeOut("slow");
+            $("#successfulLogout").show().delay(1000).fadeOut("slow");
+            window.location.href = "index.html";
         }
     });
 });
@@ -49,13 +61,12 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
     console.log(firebaseUser);
     $("#loginInfo").hide();
     $("#loginLi").hide();
-    $("#logoutLi").show();
-    $("#loginBubble").fadeToggle('fast');
-    $(".arrow").slideToggle("medium");
+    $("#logoutLi").fadeIn('fast');
+    $("#loginBubble").fadeOut('fast');
   } else {
     $("#loginInfo").show();
     $("#loginLi").show();
-    $("#logoutLi").hide();
+    $("#logoutLi").fadeOut('fast');
   }
 });
 

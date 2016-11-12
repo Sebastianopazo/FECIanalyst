@@ -8,9 +8,15 @@ $(document).click(function(e) {
     $("#loginBubble").fadeToggle('fast');
     $(".arrow").slideToggle("medium");
   }
-
 });
+//exit bubble pressing ESC
 
+$(document).on( 'keydown', function ( e ) {
+    if ( e.keyCode === 27 ) {
+        $("#loginBubble").fadeOut('fast');
+        $(".arrow").fadeOut('fast');
+    }
+});
 
 (function($){
 	$(window).load(function(){
