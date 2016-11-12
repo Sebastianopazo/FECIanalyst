@@ -50,7 +50,7 @@
 
 .bubble {
     margin-top: 73px;
-    margin-left: 230px;
+    margin-left: 240px;
     display: none;
     position: absolute;
     padding: 10px;
@@ -63,13 +63,14 @@
 }
 
 .arrow {
+    display: none;
     width: 70px;
     height: 16px;
     overflow: hidden;
     position: absolute;
     left: 50%;
     margin-left: -35px;
-    bottom: 80px;
+    bottom: 130px;
 }
 
 .arrow:after {
@@ -88,13 +89,19 @@
     -o-transform: rotate(45deg);
 }
 
-
 /*end of Login bubble*/
 
 
 /*misc classes and ID's*/
 
-.login {}
+#successfulLogout {
+  display: none;
+  width: 100%;
+  border: solid #e5ce00 1px;
+  text-align: center;
+  background-color: #ffef63;
+  font-weight: bold;
+}
 
 #neuroticism h2 {
     color: rgba(192, 170, 210, 1);
@@ -782,6 +789,15 @@ ul.social-icons li a {
 .btn.white {
     background-color: #fff;
     color: #84aabc;
+}
+
+.btn.white2 {
+    width: 100%;
+    background-color: #fff;
+    color: #60606e;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
 }
 
 @media (max-width: 991px) {
@@ -1596,7 +1612,7 @@ footer.main-footer nav.footer-nav ul li a {
     color: white;
 }
 
-.input_4 input[type="text"] {
+.input_4 input[type="text"], [type="password"] {
     height: 100%;
     width: 100%;
     border: 0;

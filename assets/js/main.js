@@ -1,8 +1,14 @@
-// login bubble toggle
-$(document).ready(function() {
-    $("#login1").click(function() {
-        $("#loginBubble").fadeToggle("fast");
-    });
+
+
+
+// login bubble toggle; hide login bubble when clicked outside
+
+$(document).click(function(e) {
+  if( e.target.id === 'loginLi') {
+    $("#loginBubble").fadeToggle('fast');
+    $(".arrow").slideToggle("medium");
+  }
+
 });
 
 

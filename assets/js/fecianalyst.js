@@ -16,14 +16,14 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignUp = document.getElementById('btnSignup');
-  const btnLogout = document.getElementById('btnLogout');
+  const logoutLi = document.getElementById('logoutLi');
   const txtEmail2 = document.getElementById('txtEmail2');
   const txtPass2 = document.getElementById('txtPass2');
   const loginInfo = document.getElementById('loginInfo');
 
 
 //add login event
-btnLogin.addEventListener('click', e => {
+loginBtn.addEventListener('click', e => {
   //get email and password
   const email = txtEmail.value;
   const pass = txtPassword.value;
@@ -33,71 +33,67 @@ btnLogin.addEventListener('click', e => {
   promise.catch(e => console.log(e.message))
 });
 
-// Add signup event
-btnSignUp.addEventListener('click', e => {
-  //get email and password
-  const Email2 = txtEmail2.value;
-  const Pass2 = txtPass2.value;
-  const auth = firebase.auth();
-  //sign in
-  const promise = auth.createUserWithEmailAndPassword(Email2, Pass2);
-  promise.catch(e => console.log(e.message))
-});
 //sign out
-btnLogout.addEventListener('click', e =>{
-  firebase.auth().signOut();
-  firebase.auth().onAuthStateChanged(firebaseUser =>{
-    if (firebaseUser) {
-    } else {
-      window.location = 'index.html';
-    }
-  });
+logoutLi.addEventListener('click', e => {
+    firebase.auth().signOut();
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {} else {
+            $("#successfulLogout").delay(3000).fadeOut("slow");
+        }
+    });
 });
 
-// add a realtime listener
+// add a realtime listener of logged in users
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if (firebaseUser) {
     console.log(firebaseUser);
-    btnLogout.classList.remove('hide');
-    loginInfo.classList.add('hide');
-
+    $("#loginInfo").hide();
+    $("#loginLi").hide();
+    $("#logoutLi").show();
+    $("#loginBubble").fadeToggle('fast');
+    $(".arrow").slideToggle("medium");
   } else {
-    window.alert('Logged out');
-    btnLogout.classList.add('hide');
-    loginInfo.classList.remove('hide');
+    $("#loginInfo").show();
+    $("#loginLi").show();
+    $("#logoutLi").hide();
   }
 });
+
+
+
+
+
 
 //get patient list from server
 
 //get elements from html
-const patientList = document.getElementById('patientList');
+//const patientList = document.getElementById('patientList');
 //create references... don't know how to reference a specific path
-const dbRefUsers = firebase.database().ref().child('users');
-const dbRefSebastian = dbRefUsers.child('8txthHri2GPSV01e5LD36jnRIAw1');
-const dbRefList = dbRefSebastian.child('patientList');
+//const dbRefUsers = firebase.database().ref().child('users');
+//const dbRefSebastian = dbRefUsers.child('8txthHri2GPSV01e5LD36jnRIAw1');
+//const dbRefList = dbRefSebastian.child('patientList');
 //sync changes in object
-dbRefUsers.on('value', snap => {
-  preUsers.innerText = JSON.stringify(snap.val(), null, 3);
-});
+//dbRefUsers.on('value', snap => {
+//  preUsers.innerText = JSON.stringify(snap.val(), null, 3);
+//});
 //sync list when something is added
-dbRefList.on('child_added', snap => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.innerText = snap.val();
-    a.id = snap.key;
-    li.appendChild(a);
-    patientList.appendChild(li);
-  });
+//dbRefList.on('child_added', snap => {
+//    const li = document.createElement('li');
+//    const a = document.createElement('a');
+//    a.innerText = snap.val();
+//    a.id = snap.key;
+//    li.appendChild(a);
+//    patientList.appendChild(li);
+//  });
 
 //sync any changes on list items
-dbRefList.on('child_changed', snap=> {
-  const liChanged = document.getElementById(snap.key);
-  liChanged.innerText = snap.val();
-})
+//dbRefList.on('child_changed', snap=> {
+//  const liChanged = document.getElementById(snap.key);
+//  liChanged.innerText = snap.val();
+//})
 //sync any items removed from list
-dbRefList.on('child_removed', snap=> {
-  const liToRemove = document.getElementById(snap.key);
-  liToRemove.innerText = snap.val();
-  liToRemove.remove(snap.key);
-})
+//dbRefList.on('child_removed', snap=> {
+//  const liToRemove = document.getElementById(snap.key);
+//  liToRemove.innerText = snap.val();
+//  liToRemove.remove(snap.key);
+//})

@@ -12,6 +12,9 @@
 </head>
 <!--body-->
 <body class="animsition">
+	<div id="successfulLogout">
+			You have Succesfully Logged Out
+	</div>
 	<header class="main-header">
 		<div class="container">
 			<a href="index.html">
@@ -27,21 +30,23 @@
 						<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
 						<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
 						<li>
-							<a href="#" id="login1">Login
+							<a id="loginLi" href="#">Login
 							</a>
 						</li>
+						<div class="bubble active" id="loginBubble" data-tooltip="0">
+								<form action="#" method="post">
+										<div class="input_4">
+											<input id=txtEmail type="text" name="user name" autocomplete="off" placeholder="User Name">
+										</div>
+										<div class="input_4">
+											<input id=txtPassword name="password"  type="password" placeholder="Password">
+										</div>
+										<a id="loginBtn" href="#" class="btn white2"><span>Login</span></a>
+									<div class="arrow"></div>
+						</div>
+						<li><a id="logoutLi" href="" class="animsition-link">Logout</a></li>
 					</ul>
 				</nav>
-				<div class="bubble active" id="loginBubble" data-tooltip="0">
-					<div class="arrow"></div>
-						<form action="#" method="post">
-								<div class="input_4">
-									<input type="text" name="user name" autocomplete="off" placeholder="User Name">
-							</div>
-								<div class="input_4">
-									<input type="text" name="password"  type="password" placeholder="Password">
-								</div>
-				</div>
 				<!-- mobile navbar -->
 				<nav class="mobile-nav"></nav>
 				<div class="menu-icon">
@@ -103,18 +108,18 @@
 							<form action="#" method="post">
 								<div class="col-md-10 spaceup">
 									<div class="input_3" style="margin-bottom:30px">
-										<input id=txtEmail type="text" name="name" autocomplete="off">
+										<input type="text" name="name" autocomplete="off">
 										<span>Email</span>
 									</div>
 								</div>
 								<div class="col-md-10">
 									<div class="input_3" style="margin-bottom:30px">
-										<input id=txtPassword type="password" name="name" autocomplete="off">
+										<input type="password" name="name" autocomplete="off">
 										<span>Password</span>
 									</div>
 								</div>
 						</div>
-						<a href="dashboard.html" id="btnLogin" class="btn white" style="margin-top:30px"><span>Login</span></a>
+						<a href="dashboard.html" class="btn white" style="margin-top:30px"><span>Login</span></a>
 						</form>
 					</div>
 				</div>
@@ -203,6 +208,7 @@
 	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/js/fecianalyst.js"></script>
 	<script type="text/javascript">
 		$(window).load(function() {
 			new WOW().init();
