@@ -1,12 +1,19 @@
 
 
 
-// login bubble toggle; hide login bubble when clicked outside
+// login bubble toggle; hide login and logout bubble when clicked outside
 
 $(document).click(function(e) {
   if( e.target.id === 'loginLi') {
     $("#loginBubble").fadeToggle('fast');
     $(".arrow").slideToggle("medium");
+  }
+});
+
+$(document).click(function(e) {
+  if( e.target.id === 'logoutLi') {
+    $("#logoutBubble").fadeToggle('fast');
+    $(".arrow2").slideToggle("medium");
   }
 });
 //exit bubble pressing ESC

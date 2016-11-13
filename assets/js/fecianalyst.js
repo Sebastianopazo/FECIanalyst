@@ -16,14 +16,14 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignUp = document.getElementById('btnSignup');
-  const logoutLi = document.getElementById('logoutLi');
+  const btnLogout = document.getElementById('btnLogout');
   const txtEmail2 = document.getElementById('txtEmail2');
   const txtPass2 = document.getElementById('txtPass2');
   const loginInfo = document.getElementById('loginInfo');
 
 
 //add login event
-loginBtn.addEventListener('click', e => {
+btnLogin.addEventListener('click', e => {
   //get email and password
   const email = txtEmail.value;
   const pass = txtPassword.value;
@@ -35,22 +35,26 @@ loginBtn.addEventListener('click', e => {
   $('#txtEmail').val('');
 });
 
+
+
+
+
 //login bubble login by pressing enter
 
 $('#txtPassword').keypress(function (e) {
   if (e.keyCode == 13) {
-    document.getElementById('loginBtn').click();
+    document.getElementById('btnLogin').click();
     return false;
   }
 });
 
 //Log out
-logoutLi.addEventListener('click', e => {
+btnLogout.addEventListener('click', e => {
+    $("#logoutBubble").fadeOut('fast');
     firebase.auth().signOut();
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {} else {
             $("#successfulLogout").show().delay(1000).fadeOut("slow");
-            window.location.href = "index.html";
         }
     });
 });
@@ -58,7 +62,6 @@ logoutLi.addEventListener('click', e => {
 // add a realtime listener of logged in users
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if (firebaseUser) {
-    console.log(firebaseUser);
     $("#loginInfo").hide();
     $("#loginLi").hide();
     $("#logoutLi").fadeIn('fast');
@@ -69,8 +72,6 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
     $("#logoutLi").fadeOut('fast');
   }
 });
-
-
 
 
 
