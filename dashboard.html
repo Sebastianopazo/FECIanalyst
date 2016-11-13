@@ -251,39 +251,6 @@
 			new WOW().init();
 		});
 	</script>
-	<script type="text/javascript">
-
-	//get Current user name and lastname from server and put it on the logout bubble and page title
-			//get current user UID
-
-					firebase.auth().onAuthStateChanged(firebaseUser =>{
-					  if (firebaseUser) {
-							console.log(firebaseUser.uid);
-						}
-						});
-
-			const dbRefUserName = firebase.database().ref('users').child('8txthHri2GPSV01e5LD36jnRIAw1').child('name');
-
-			dbRefUserName.on('value', function(nameSnapshot) {
-				var space = document.createTextNode("\u00A0");
-				var name = JSON.stringify(nameSnapshot.val()).replace(/^"(.*)"$/, '$1');
-				$(".big-title.montserrat-text.uppercase").append(name, space);
-				$(".name").append(name);
-			}, function(error) {
-					console.log(error);
-			});
-			//lastName
-			const dbRefUserLastName = firebase.database().ref('users').child('8txthHri2GPSV01e5LD36jnRIAw1').child('lastName');
-			dbRefUserLastName.on('value', function(lastNameSnapshot) {
-				var lastName = JSON.stringify(lastNameSnapshot.val()).replace(/^"(.*)"$/, '$1');
-				$(".lastName").append(lastName);
-				$(".big-title.montserrat-text.uppercase").append(lastName);
-			}, function(error) {
-				console.log(error);
-			});
-
-
-	</script>
 </body>
 
 </html>
