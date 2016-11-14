@@ -62,7 +62,7 @@
     box-shadow: 0 0 7px black;
 }
 
-.arrow {
+.arrow, .arrow2 {
     display: none;
     width: 70px;
     height: 16px;
