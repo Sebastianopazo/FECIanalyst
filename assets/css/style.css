@@ -43,7 +43,7 @@
 
 /*Login Bubble styles*/
 
-.bubble, .arrow:after {
+.bubble, .bubble2, .arrow:after, .arrow2:after {
     background: #60606e;
     border: 1px solid white;
 }
@@ -61,6 +61,37 @@
     text-transform: uppercase;
     box-shadow: 0 0 7px black;
 }
+.arrow {
+    display: none;
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: 130px;
+}
+
+.bubble2 {
+    margin-top: 80px;
+    margin-left: 280px;
+    display: none;
+    position: absolute;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font: bold 14px "montserrat-text", Sans-Serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+    min-height: 128px;
+}
+
+.name, .lastName {
+  display: inline-block;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
 
 .arrow, .arrow2 {
     display: none;
@@ -73,7 +104,18 @@
     bottom: 130px;
 }
 
-.arrow:after {
+.arrow2 {
+    display: none;
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: 126px;
+}
+
+.arrow:after, .arrow2:after {
     content: "";
     position: absolute;
     left: 20px;
@@ -806,7 +848,7 @@ ul.social-icons li a {
     color: #60606e;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-
+    display: block;
 }
 
 @media (max-width: 991px) {

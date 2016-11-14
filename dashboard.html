@@ -27,7 +27,28 @@
 						<li><a href="about.html" class="animsition-link">about FECI</a></li>
 						<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
 						<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
-						<li><a href="#" class="animsition-link">Login</a></li>
+						<li>
+							<a id="loginLi" href="#">Login
+							</a>
+						</li>
+						<div class="bubble" id="loginBubble" data-tooltip="0">
+								<form id='loginForm' action="#" method="post">
+										<div class="input_4">
+											<input id=txtEmail type="text" name="user name" autocomplete="off" placeholder="User Name">
+										</div>
+										<div class="input_4">
+											<input id=txtPassword name="password"  type="password" placeholder="Password">
+										</div>
+										<a id="btnLogin" href="#" class="btn white2"><span>Login</span></a>
+									<div class="arrow"></div>
+						</div>
+						<li><a id="logoutLi" href="#">Logout</a></li>
+						<div class="bubble2" id="logoutBubble" data-tooltip="0">
+							<div class="arrow2"></div>
+							<div class="name"></div>
+							<div class="lastName"></div>
+							<a id="btnLogout" href="#" class="btn white2"><span>Logout</span></a>
+						</div>
 					</ul>
 				</nav>
 				<!-- mobile navbar -->
@@ -47,7 +68,6 @@
 		</a>
 		<div class="page-title">
 			<div class="big-title montserrat-text uppercase">
-				Sebastian Opazo
 			</div>
 			<div class="small-title montserrat-text uppercase">HOME/Dashboard</div>
 		</div>
@@ -184,6 +204,7 @@
 			</div>
 		</div>
 	</footer>
+
 	<!--hidden lightbox form for adding patients-->
 	<div id="light" class="white_content wow fadeInUp">
 		<h2 class="small-title montserrat-text uppercase">
@@ -224,6 +245,7 @@
 	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/fecianalyst.js"></script>
 	<script type="text/javascript">
 		$(window).load(function() {
 			new WOW().init();
