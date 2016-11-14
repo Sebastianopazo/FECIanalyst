@@ -1,11 +1,8 @@
 
 
 
-<<<<<<< HEAD
-// login and logout bubble toggle; hide login bubble when clicked outside
-=======
+
 // login bubble toggle; hide login and logout bubble when clicked outside
->>>>>>> origin/dodge-work
 
 $(document).click(function(e) {
   if( e.target.id === 'loginLi') {
@@ -20,11 +17,8 @@ $(document).click(function(e) {
     $(".arrow2").slideToggle("medium");
   }
 });
-<<<<<<< HEAD
-//exit bubbles pressing ESC
-=======
+
 //exit bubble pressing ESC
->>>>>>> origin/dodge-work
 
 $(document).on( 'keydown', function ( e ) {
     if ( e.keyCode === 27 ) {
