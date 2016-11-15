@@ -252,10 +252,6 @@
 	</script>
 	<script type="text/javascript">
 
-//create function to filter and append name and lastnames from patients
-function addNamesToList (array) {
-	$("#patientList").append("<li class='patient'><a href='carlosCruz.html'>"+ array[3] + " " + array[2] + " " + array[5] +"<span><div class='info'></div><div class='edit'></div><div class='delete'></div></span></a></li>");
-}
 
 //get current user patients list from database
 firebase.auth().onAuthStateChanged(firebaseUser =>{
@@ -266,12 +262,18 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 		dbrefPatients.on('value', function(snapshot) {
 			var patientList = snapshot.val();
 			//loop to get all patients from database
-			var i = 1;
-				while (patientList[i] != null) {
-					//get a specific patient info
-					var currentPatient = patientList[i];
-					var patientToArray = Object.values(currentPatient);
+			var i = 0;
+			$("#patientList").empty();
+			while (Object.keys(patientList)[i] != null) {
+				//get a specific patient info
+				var currentPatientId = Object.keys(patientList)[i];
+				var patientToArray = Object.values(patientList[currentPatientId]);
 					//append info to list
+					//create function to filter and append name and lastnames from patients
+					function addNamesToList (array) {
+						$("#patientList").append("<li class='patient'><a href='#'>"+ array[3] + " " + array[2] + " " + array[5] +"<span><div class='info'></div><div class='edit'></div><div id='" + currentPatientId +"'class='delete'></div></span></a></li>");
+					}
+
 					addNamesToList(patientToArray);
 					i++;
 				}
@@ -280,7 +282,6 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 		});
 	}
 });
-
 
 //upload information from Patient Form on completion
 
@@ -301,18 +302,19 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 				}
 				//function to turn the array rom the form into an object that can be sent to firebase; also to upload to database
 				function patientInfoArrayToObject (array) {
-					var patientInfoObject = {"age" : array[3], "intakeDate" : array[5], "lastName" : array[1], "recordNumber" : array[4], "secondLastName" : array[2]}
-					console.log(patientInfoObject);
+					var patientInfoObject = {"age" : array[3], "intakeDate" : array[5], "lastName" : array[1], "name" : array[0], "recordNumber" : array[4], "secondLastName" : array[2]}
 					postRefPatients.push().set(patientInfoObject);
 				}
 				patientInfoArrayToObject(patientFormArray);
 
 
 		});
+		//press "delete" bin to remove patient;
+		$(".delete").click(function(){
+			(firebase.database().ref('allPatientList').child(currentUserUID).child('patientList').child($(this).id).remove())
+	})
 	};
 });
-
-//document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'
 
 </script>
 

@@ -209,6 +209,7 @@
     background-size: cover;
     background-image: url('../../images/delete.png');
     display: inline-block;
+    position: absolute;
 }
 
 .edit {
