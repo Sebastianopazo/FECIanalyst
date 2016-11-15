@@ -43,7 +43,7 @@
 								<a id="btnLogin" href="#" class="btn white2"><span>Login</span></a>
 								<div class="arrow"></div>
 						</div>
-						<li><a id="logoutLi" href="#">Logout</a></li>
+						<li><a id="logoutLi" href="#">Profile</a></li>
 						<div class="bubble2" id="logoutBubble" data-tooltip="0">
 							<div class="arrow2"></div>
 							<div class="name"></div>
@@ -84,6 +84,9 @@
 				</div>
 			</div>
 			<div class="row">
+				<div id="successPatient" class="alert alert-success">
+					<strong>Success! </strong>Patient created!
+				</div>
 				<div class="widget wow fadeInUp">
 					<ul id="patientList" class="list">
 				</div>
@@ -297,8 +300,8 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 			$("#submitPatientInfo").click(function(){
 				for (var i = 0; i < 6; i++) {
 					var patientInput = document.getElementById("patientInfo").elements[i].value;
-					patientFormArray.push(patientInput)
-					console.log(patientInput);
+						patientFormArray.push(patientInput)
+						console.log(patientInput);
 				}
 				//function to turn the array rom the form into an object that can be sent to firebase; also to upload to database
 				function patientInfoArrayToObject (array) {
@@ -306,13 +309,16 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 					postRefPatients.push().set(patientInfoObject);
 				}
 				patientInfoArrayToObject(patientFormArray);
+				var lightBox1 = document.getElementById('light');
+				var fade = document.getElementById('fade')
+				lightBox1.style.display='none';
+				fade.style.display='none';
+				$("#successPatient").fadeIn('fast').delay(2000).fadeOut("fast");
+
 
 
 		});
 		//press "delete" bin to remove patient;
-		$(".delete").click(function(){
-			(firebase.database().ref('allPatientList').child(currentUserUID).child('patientList').child($(this).id).remove())
-	})
 	};
 });
 

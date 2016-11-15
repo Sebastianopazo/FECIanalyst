@@ -135,6 +135,10 @@
 
 
 /*misc classes and ID's*/
+#successPatient {
+  margin-top: 30px;
+  display: none;
+}
 
 #logoutLi {
   color: white;

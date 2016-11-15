@@ -2,12 +2,12 @@
 
 
 
-// login bubble toggle; hide login and logout bubble when clicked outside
+// login and logout bubble toggle; hide login and logout bubble when clicked outside
 
 $(document).click(function(e) {
   if( e.target.id === 'loginLi') {
     $("#loginBubble").fadeToggle('fast');
-    $(".arrow").slideToggle("medium");
+    $(".arrows").slideToggle("medium");
   }
 });
 
@@ -18,14 +18,45 @@ $(document).click(function(e) {
   }
 });
 
-//exit bubble pressing ESC
+$(document).ready(function()
+{
+    $(document).mouseup(function(e)
+    {
+        var subject = $("#loginBubble");
 
-$(document).on( 'keydown', function ( e ) {
-    if ( e.keyCode === 27 ) {
+        if(e.target.id != subject.attr('id') && e.target.id != 'loginLi' && e.target.id != 'txtEmail' && e.target.id != 'txtPassword' )
+
+        {
+            subject.fadeOut('fast');
+            $(".arrow").slideUp("medium");
+        }
+    });
+});
+
+$(document).ready(function()
+{
+    $(document).mouseup(function(e)
+    {
+        var subject = $("#logoutBubble");
+
+        if(e.target.id != subject.attr('id') && e.target.id != 'logoutLi')
+
+        {
+            subject.fadeOut('fast');
+            $(".arrow").slideUp("medium");
+        }
+    });
+});
+
+//hide login and logout bubbles pressing ESC
+
+$(document).on( 'keydown', function (key) {
+    if (key.keyCode === 27 ) {
         $("#loginBubble").fadeOut('fast');
         $(".arrow").fadeOut('fast');
     }
 });
+
 
 (function($){
 	$(window).load(function(){
