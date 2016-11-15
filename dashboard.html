@@ -84,12 +84,8 @@
 			</div>
 			<div class="row">
 				<div class="widget wow fadeInUp">
-					<ul class="list">
+					<ul id="patientList" class="list">
 						<li><a href="carlosCruz.html">Carlos Cruz Mancilla<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
-						<li><a href="">Juan Soto Gómez<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
-						<li><a href="">Héctor Bonifacio Echeverría y Cervantes de La Cruz Arroyo Rojas<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
-						<li><a href="">Ignacio Gómez Gómez<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -251,6 +247,37 @@
 			new WOW().init();
 		});
 	</script>
+	<script type="text/javascript">
+
+	//get current user uid
+	firebase.auth().onAuthStateChanged(firebaseUser =>{
+		if (firebaseUser) {
+			var currentUserUID = firebaseUser.uid;
+			//get patient name and lastName
+			const patientName = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList').child("1").child('name');
+			const patientLastName = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList').child("1").child('lastName');
+				//get patient list from current User
+				patientName.on('value', function(patientNameSnapshot) {
+					var patientNameStr = JSON.stringify(patientNameSnapshot.val()).replace(/^"(.*)"$/, '$1');
+					$("#patientList").append("<li><a href='carlosCruz.html'>"+ patientNameStr +"<span><div class='info'></div><div class='edit'></div><div class='delete'></div></span></a></li>");
+				}, function(error) {
+						console.log(error);
+				});
+				patientLastName.on('value', function(patientLastNameSnapshot) {
+					var patientLastNameStr = JSON.stringify(patientLastNameSnapshot.val()).replace(/^"(.*)"$/, '$1');
+					console.log(patientLastNameStr);
+				}, function(error) {
+						console.log(error);
+				});
+
+		}
+		});
+
+
+
+</script>
+
+
 </body>
 
 </html>
