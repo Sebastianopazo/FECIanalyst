@@ -51,7 +51,6 @@ btnLogout.addEventListener('click', e => {
     firebase.auth().signOut();
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {} else {
-            $("#successfulLogout").show().delay(1000).fadeOut("slow");
             window.location = 'index.html';
         }
     });

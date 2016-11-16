@@ -7,7 +7,7 @@
 $(document).click(function(e) {
   if( e.target.id === 'loginLi') {
     $("#loginBubble").fadeToggle('fast');
-    $(".arrows").slideToggle("medium");
+    $(".arrow").slideToggle("medium");
   }
 });
 
