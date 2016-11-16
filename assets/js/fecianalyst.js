@@ -92,3 +92,17 @@ btnLogout.addEventListener('click', e => {
             $("#logoutLi").fadeOut('fast');
           }
           });
+
+
+//Get profile Image and put it on loginBubble
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+      var currentUserUID = firebaseUser.uid;
+      var storage = firebase.storage();
+      var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/')
+        const profileImgRef = gsReference.child( currentUserUID + "/sebastianprofile.jpg").getDownloadURL().then(function(url) {
+                $("#profileImage").attr("src", url)}).catch(function(error) {
+
+    });
+}
+});
