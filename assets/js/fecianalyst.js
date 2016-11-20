@@ -10,6 +10,7 @@
   var database = firebase.database();
 //
 
+
 //getting global elements from html for login
   const txtEmail = document.getElementById('txtEmail');
   const txtPassword = document.getElementById('txtPassword');
@@ -94,15 +95,23 @@ btnLogout.addEventListener('click', e => {
           });
 
 
-//Get profile Image and put it on loginBubble
+//Get profile Image and put it on logoutBubble
+
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
       var currentUserUID = firebaseUser.uid;
       var storage = firebase.storage();
-      var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/')
-        const profileImgRef = gsReference.child( currentUserUID + "/sebastianprofile.jpg").getDownloadURL().then(function(url) {
-                $("#profileImage").attr("src", url)}).catch(function(error) {
+      var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
+      const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePicture');
+      profileImgKeyRef.on('value', function(imageSnapshot){
+        var imagePath = JSON.stringify(imageSnapshot.val()).replace(/^"(.*)"$/, '$1');
 
+        const profileImgRef = gsReference.child(imagePath).getDownloadURL().then(function(url) {
+          $("#profileImage").attr("src", url)
+          $("#profileImage2").attr("src", url)
+                  }).catch(function(error) {
+            // Handle any errors
+          });
+      });
+      }
     });
-}
-});

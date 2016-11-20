@@ -172,6 +172,10 @@
   margin-top: 8px;
   border-radius: 20px;
 }
+#profileImage2 {
+  height: 120px;
+  width: 120px;
+}
 
 #successPatient {
   margin-top: 30px;
@@ -1413,11 +1417,19 @@ footer.main-footer nav.footer-nav ul li a {
     overflow: hidden;
     display: inline-block;
     align-items: center;
-    min-height: 310px;
-    max-height: 310px;
+    min-height: 210px;
+    max-height: 210px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
     border: solid rgba(0, 0, 0, .1) 1px;
+}
+
+.tooltips_item4 img {
+  display: block;
+  margin: auto;
+  height: 120px;
+  width: 120px;
 }
 .tooltips_item .tooltips_item_hover, .tooltips_item3 .tooltips_item_hover, .tooltips_item4 .tooltips_item_hover  {
     position: absolute;

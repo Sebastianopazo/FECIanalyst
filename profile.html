@@ -134,8 +134,8 @@
                 <div class="col-md-3">
                     <a href="#" class="tooltips_item4 wow fadeInUp">
                       <div>
-                        <h2>Profile Image</h2>
-                        <img src="images/sebastian.png" alt="" />
+                        <h3>PROFILE IMAGE</h3>
+                        <img id="profileImage2" src="" alt="" />
                       </div>
                       <div class="tooltips_item_hover">
                         <div class="item_info">
@@ -154,6 +154,8 @@
                     <strong>Success! </strong>Information Updated!
                 </div>
             </div>
+            <progress id="loader" value="0" max="100">0%</progress>
+            <input id="uploadImage" type="file" accept="image/*">
         </div>
     </section>
     <!-- Login Info -->
@@ -289,6 +291,49 @@
 			new WOW().init();
 		});
 	</script>
+  <script type="text/javascript">
+    //upload profile image to firebase
+      //get elements
+      var loader = document.getElementById('loader')
+      var uploadImage = document.getElementById('uploadImage');
+        //listen for file selection
+        uploadImage.addEventListener('change', function(e) {
+        //get file
+        var file = e.target.files[0];
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if (firebaseUser) {
+              var currentUserUID = firebaseUser.uid;
+              //make reference
+              var storageRef = firebase.storage().ref(currentUserUID + '/profilePic/' + file.name);
+              //Upload File
+              var task = storageRef.put(file);
+
+              //Update progress
+              task.on('state_changed',
+                function progress(snapshot) {
+                  var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                  loader.value = percentage;
+
+                },
+                function error(err){
+
+                },
+                function complete(){
+                }
+              );
+              //update profile picture path on user
+              function replaceProfileImage(imageUrl) {
+                firebase.database().ref('users/' + currentUserUID).update({
+                  profilePicture : imageUrl
+                });
+              }
+              replaceProfileImage(currentUserUID + '/profilePic/' + file.name);
+
+        }
+        });
+    });
+
+  </script>
 </body>
 
 </html>
