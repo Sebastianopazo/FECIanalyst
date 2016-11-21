@@ -24,7 +24,7 @@
                 <!-- desktop navbar -->
                 <nav class="desktop-nav">
                     <ul class="first-level">
-                        <li><a href="index.html" class="animsition-link">Home</a></li>
+                        <li><a href="dashboard.html" class="animsition-link">Home</a></li>
                         <li><a href="about.html" class="animsition-link">about FECI</a></li>
                         <li><a href="faqs.html" class="animsition-link">FAQs</a></li>
                         <li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
@@ -88,7 +88,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';" class="btn green"><span>Add Patient</span></a>
+                    <a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green"><span>Add Patient</span></a>
                 </div>
             </div>
             <div class="row">
@@ -245,7 +245,7 @@
 			</form>
 
 		<a id="submitPatientInfo" class="btn green2">Save Information</a>
-		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Close</a>
+		<a href="javascript:void(0)" onclick="$('#light').fadeOut('fast');$('fade').fadeOut('fast')" class="btn green2">Close</a>
 	</div>
 	<div id="fade" class="black_overlay"></div>
 

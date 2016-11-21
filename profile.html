@@ -24,7 +24,7 @@
                 <!-- desktop navbar -->
                 <nav class="desktop-nav">
                     <ul class="first-level">
-                        <li><a href="index.html" class="animsition-link">Home</a></li>
+                        <li><a href="dashboard.html" class="animsition-link">Home</a></li>
                         <li><a href="about.html" class="animsition-link">about FECI</a></li>
                         <li><a href="faqs.html" class="animsition-link">FAQs</a></li>
                         <li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
@@ -272,7 +272,7 @@
     </footer>
 
     <!--hidden lightbox form for adding profile information-->
-    <div id="light" class="white_content wow fadeInUp">
+    <div id="light" class="white_content">
         <h2 class="small-title montserrat-text uppercase">
 			Edit Profile Information:
 		<h2>
@@ -324,7 +324,7 @@
                         </div>
                         <div class="col-md-12">
                             	<a id="submitInfo" class="btn green2">Save</a>
-                              <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Cancel</a>
+                              <a href="javascript:void(0)" onclick="$('#light').fadeOut('fast');$('#fade').fadeOut('fast')" class="btn green2">Cancel</a>
                         </div>
                     </form>
 
@@ -332,7 +332,7 @@
 	</div>
 	<div id="fade" class="black_overlay"></div>
   <!--hidden lightbox to add profile pic-->
-<div id="light5" class="white_content wow fadeInUp">
+<div id="light5" class="white_content">
     <h2 class="small-title montserrat-text uppercase">
           Edit Profile Picture:
       <h2>
@@ -389,8 +389,8 @@
       })
     //edit personal info with lightbox
     $("#editInfo").click(function(){
-      document.getElementById('light').style.display='block';
-      document.getElementById('fade').style.display='block';
+      $('#light').fadeIn('fast');
+      $('#fade').fadeIn('fast');
     });
 
     //submit new info to firebase
@@ -401,8 +401,8 @@
           var userFormArray = [];
           const postRefUser = firebase.database().ref('users').child(currentUserUID);
         $("#successInfo").fadeIn('fast').delay(2000).fadeOut("fast");
-        document.getElementById('light').style.display='none';
-        document.getElementById('fade').style.display='none';
+        $('#light').fadeOut('fast');
+        $('#fade').fadeOut('fast');
         for (var i = 0; i < 6; i++) {
 					var userInput = document.getElementById('userInfo').elements[i].value;
           userFormArray.push(userInput);

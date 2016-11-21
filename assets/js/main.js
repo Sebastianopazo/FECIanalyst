@@ -1,7 +1,3 @@
-
-
-
-
 // login and logout bubble toggle; hide login and logout bubble when clicked outside
 
 $(document).click(function(e) {
@@ -130,7 +126,7 @@ $(document).on( 'keydown', function (key) {
 			}
 		});
 
-		// NAVBAR
+		// NavBar
 		var _link = $("nav.desktop-nav ul.first-level").children("li");
 		var shown = false;
 		// show navbar
