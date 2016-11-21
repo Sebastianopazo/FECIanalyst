@@ -139,6 +139,9 @@
 
 
 /*misc classes and ID's*/
+#loader {
+  display: none;
+}
 
 #titleName, #titleLastName {
   display: inline-block;
@@ -159,7 +162,7 @@
   text-transform: uppercase;
   border-radius: 0;
   display: block;
-  border: dashed white 1px;
+  border: solid rgba(0, 0, 0, .3) 1px;
   margin-bottom: 10px;
   margin-top: 10px;
   color: #fff;
@@ -189,6 +192,11 @@
 #profileImage2 {
   height: 120px;
   width: 120px;
+}
+#profileImage3 {
+  height: 200px;
+  width: 200px;
+  border: solid black 1px;
 }
 
 #successPatient {
@@ -548,7 +556,14 @@ iframe {
     display: block;
 }
 
-
+progress {
+  display: block;
+ background-color: #f3f3f3;
+ border: 0;
+ height: 18px;
+ border-radius: 9px;
+ width: 300px;
+}
 /*blockquote*/
 
 blockquote.bq {
@@ -1490,6 +1505,7 @@ footer.main-footer nav.footer-nav ul li a {
 }
 
 .tooltips_item .tooltips_item_hover .item_info em, .tooltips_item3 .tooltips_item_hover .item_info em, .tooltips_item4 .tooltips_item_hover .item_info em {
+    cursor: pointer;
     font-style: normal;
     font-weight: 700;
     display: inline-block;
@@ -1780,6 +1796,10 @@ input[type=date] {
     color: #9a9a9a;
     border: none;
     margin-left: 20px;
+}
+
+input[type=file] {
+font-size: 15px;
 }
     /*select input */
 

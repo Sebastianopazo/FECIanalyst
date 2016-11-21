@@ -109,10 +109,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePicture');
       profileImgKeyRef.on('value', function(imageSnapshot){
         var imagePath = JSON.stringify(imageSnapshot.val()).replace(/^"(.*)"$/, '$1');
-
         const profileImgRef = gsReference.child(imagePath).getDownloadURL().then(function(url) {
           $("#profileImage").attr("src", url)
           $("#profileImage2").attr("src", url)
+          $("#profileImage3").attr("src", url)
                   }).catch(function(error) {
             // Handle any errors
           });
