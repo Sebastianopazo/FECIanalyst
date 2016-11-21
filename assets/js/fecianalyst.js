@@ -73,8 +73,9 @@ btnLogout.addEventListener('click', e => {
             dbRefUserName.on('value', function(nameSnapshot) {
               var space = document.createTextNode("\u00A0");
               var name = JSON.stringify(nameSnapshot.val()).replace(/^"(.*)"$/, '$1');
-              console.log(name);
+              $("#titleName").empty();
               $("#titleName").append(name, space);
+              $(".name").empty();
               $(".name").append(name);
             }, function(error) {
                 console.log(error);
@@ -83,6 +84,8 @@ btnLogout.addEventListener('click', e => {
             const dbRefUserLastName = firebase.database().ref('users').child(currentUserUID).child('lastName');
             dbRefUserLastName.on('value', function(lastNameSnapshot) {
               var lastName = JSON.stringify(lastNameSnapshot.val()).replace(/^"(.*)"$/, '$1');
+              $("#titleLastName").empty();
+              $(".lastName").empty();
               $(".lastName").append(lastName);
               $("#titleLastName").append(lastName);
             }, function(error) {
