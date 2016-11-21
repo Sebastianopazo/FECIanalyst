@@ -139,6 +139,20 @@
 
 
 /*misc classes and ID's*/
+
+#titleName, #titleLastName {
+  display: inline-block;
+}
+
+#selectTitle {
+    color: #84aabc;
+    font-size: 10px;
+    top: 0px;
+    margin-left: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .editProfile {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -179,6 +193,10 @@
 
 #successPatient {
   margin-top: 30px;
+  display: none;
+}
+
+#successInfo {
   display: none;
 }
 
@@ -1762,4 +1780,15 @@ input[type=date] {
     color: #9a9a9a;
     border: none;
     margin-left: 20px;
+}
+    /*select input */
+
+select {
+    height: 50px;
+    width: 100%;
+    border: solid 1px rgba(0, 0, 0, .1);
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #9a9a9a;
 }

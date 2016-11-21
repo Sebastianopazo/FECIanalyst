@@ -73,7 +73,8 @@ btnLogout.addEventListener('click', e => {
             dbRefUserName.on('value', function(nameSnapshot) {
               var space = document.createTextNode("\u00A0");
               var name = JSON.stringify(nameSnapshot.val()).replace(/^"(.*)"$/, '$1');
-              $(".big-title.montserrat-text.uppercase").append(name, space);
+              console.log(name);
+              $("#titleName").append(name, space);
               $(".name").append(name);
             }, function(error) {
                 console.log(error);
@@ -83,7 +84,7 @@ btnLogout.addEventListener('click', e => {
             dbRefUserLastName.on('value', function(lastNameSnapshot) {
               var lastName = JSON.stringify(lastNameSnapshot.val()).replace(/^"(.*)"$/, '$1');
               $(".lastName").append(lastName);
-              $(".big-title.montserrat-text.uppercase").append(lastName);
+              $("#titleLastName").append(lastName);
             }, function(error) {
               console.log(error);
             });

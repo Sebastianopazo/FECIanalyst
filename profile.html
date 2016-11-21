@@ -72,6 +72,10 @@
         </a>
         <div class="page-title">
             <div class="big-title montserrat-text uppercase">
+              <div id="titleName">
+              </div>
+              <div id="titleLastName">
+              </div>
             </div>
             <div class="small-title montserrat-text uppercase">HOME/Profile</div>
         </div>
@@ -81,6 +85,14 @@
             <span>User Profile</span>
         </div>
         <div class="container">
+          <div class="row">
+              <div id="successImage" class="alert alert-success">
+                  <strong>Success! </strong>Image Updated!
+              </div>
+              <div id="successInfo" class="alert alert-success">
+                  <strong>Success! </strong>Information Updated!
+              </div>
+          </div>
             <div class="row">
                 <div class="col-md-9">
                   <div class="row">
@@ -89,42 +101,42 @@
                               <form action="#" method="post">
                                   <div class="col-md-6">
                                       <div class="input_1" style="margin-bottom:30px">
-                                          <input value="Sebastian" type="text" name="Name" autocomplete="off" readonly="readonly">
+                                          <input id="name" value="" type="text" name="Name" autocomplete="off" readonly="readonly">
                                     			<span class="active">Name</span>
                                       </div>
                                   </div>
                                   <div class="col-md-6">
                                       <div class="input_1" style="margin-bottom:30px">
-                                          <input value="Opazo" type="text" name="Last Name" autocomplete="off" readonly="readonly">
+                                          <input id="lastName" value="" type="text" name="Last Name" autocomplete="off" readonly="readonly">
                                           <span class="active">Last Name</span>
                                       </div>
                                   </div>
                                   <div class="col-md-6">
                                       <div class="input_1" style="margin-bottom:30px">
-                                          <input value="Marchetti" type="text" name="second Last Name" autocomplete="off" readonly="readonly">
+                                          <input id="secondLastName" value="" type="text" name="second Last Name" autocomplete="off" readonly="readonly">
                                           <span class="active">Second Last Name</span>
                                       </div>
                                   </div>
                                   <div class="col-md-6">
                                       <div class="input_1" style="margin-bottom:30px">
-                                          <input value="sropazo@uc.cl" type="text" name="Email" autocomplete="off" readonly="readonly">
+                                          <input id="email" value="sropazo@uc.cl" type="text" name="Email" autocomplete="off" readonly="readonly">
                                           <span class="active">Email</span>
                                       </div>
                                   </div>
                                   <div class="col-md-6">
                                       <div class="input_1" style="margin-bottom:30px">
-                                          <input value="Verónica Bagladi" type="text" name="supervisor" autocomplete="off" readonly="readonly">
+                                          <input id="supervisor" value="Verónica Bagladi" type="text" name="supervisor" autocomplete="off" readonly="readonly">
                                           <span class="active">Supervisor</span>
                                       </div>
                                   </div>
                                   <div class="col-md-6">
                                       <div class="input_1" style="margin-bottom:30px">
-                                          <input value="Masters 2015" type="text" name="program" autocomplete="off" readonly="readonly">
+                                          <input id="program" value="Masters 2015" type="text" name="program" autocomplete="off" readonly="readonly">
                                           <span class="active">Program</span>
                                       </div>
                                   </div>
                                   <div class="col-md-12">
-                                      <a href="#" class="btn green2"><span><div class="edit2"></div>Edit Information</span></a>
+                                      <a id="editInfo" class="btn green2"><span><div class="edit2"></div>Edit Information</span></a>
                                   </div>
                               </form>
                           </div>
@@ -144,14 +156,6 @@
                         </div>
                       </div>
                     </a>
-                </div>
-            </div>
-            <div class="row">
-                <div id="successImage" class="alert alert-success">
-                    <strong>Success! </strong>Image Updated!
-                </div>
-                <div id="successInfo" class="alert alert-success">
-                    <strong>Success! </strong>Information Updated!
                 </div>
             </div>
             <progress id="loader" value="0" max="100">0%</progress>
@@ -269,13 +273,64 @@
         </div>
     </footer>
 
-    <!--hidden lightbox form for adding profile image-->
+    <!--hidden lightbox form for adding profile information-->
     <div id="light" class="white_content wow fadeInUp">
         <h2 class="small-title montserrat-text uppercase">
-			Add Profile Image:
+			Edit Profile Information:
 		<h2>
-		<a id="submitImage" href="#" class="btn green2">Save Image</a>
-		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Close</a>
+        <div class="row">
+                    <form id="userInfo" action="#" method="post">
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="name2" value="" type="text" name="Name" autocomplete="off">
+                                <span class="active">Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="lastName2" value="" type="text" name="Last Name" autocomplete="off">
+                                <span class="active">Last Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="secondLastName2" value="" type="text" name="second Last Name" autocomplete="off">
+                                <span class="active">Second Last Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="email2" value="" type="text" name="Email" autocomplete="off" >
+                                <span class="active">Email</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="supevisor2" value="" type="text" name="supervisor" autocomplete="off" >
+                                <span class="active">Supervisor</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h4 id="selectTitle">Program</h4>
+                            <select name="program">
+                              <option value="Masters 2015">Select</option>
+                              <option value="Masters 2015">Masters 2015</option>
+                              <option value="Masters 2016">Masters 2016</option>
+                              <option value="Masters 2017">Masters 2017</option>
+                              <option value="Internship">Internship</option>
+                              <option value="Certificate 2015">Certificate 2015</option>
+                              <option value="Certificate 2016">Certificate 2016</option>
+                              <option value="Certificate 2017">Certificate 2017</option>
+                              <option value="Supervisor">Supervisor</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            	<a id="submitInfo" class="btn green2">Save</a>
+                              <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn green2">Cancel</a>
+                        </div>
+                    </form>
+
+        </div>
 	</div>
 	<div id="fade" class="black_overlay"></div>
 
@@ -292,6 +347,64 @@
 		});
 	</script>
   <script type="text/javascript">
+
+    //get profile information from firebase
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+    	if (firebaseUser) {
+    		//get current user UID
+    		var currentUserUID = firebaseUser.uid;
+    		const dbrefUserInfo = firebase.database().ref('users').child(currentUserUID);
+          dbrefUserInfo.on('value', function(userSnapshot) {
+          var info = userSnapshot.val();
+          var userInfo = Object.values(info);
+          console.log(userInfo)
+          $("#name").val(userInfo[2]);
+          $("#lastName").val(userInfo[1]);
+          $("#secondLastName").val(userInfo[5]);
+          $("#email").val(userInfo[0]);
+          $("#supevisor").val(userInfo[6]);
+          $("#program").val(userInfo[4]);
+          $("#name2").val(userInfo[2]);
+          $("#lastName2").val(userInfo[1]);
+          $("#secondLastName2").val(userInfo[5]);
+          $("#email2").val(userInfo[0]);
+          $("#supevisor2").val(userInfo[6]);
+          console.log(userInfo)
+        }, function(error) {
+            console.log(error);
+        });
+      }
+      })
+    //edit personal info with lightbox
+    $("#editInfo").click(function(){
+      document.getElementById('light').style.display='block';
+      document.getElementById('fade').style.display='block';
+    });
+
+    //subit new info to firebase
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+      if (firebaseUser) {
+        var currentUserUID = firebaseUser.uid;
+        var userFormArray = [];
+		  	const postRefUser = firebase.database().ref('users').child(currentUserUID);
+        $("#submitInfo").click(function(){
+        $("#successInfo").fadeIn('fast').delay(2000).fadeOut("fast");
+        document.getElementById('light').style.display='none';
+        document.getElementById('fade').style.display='none';
+        for (var i = 0; i < 6; i++) {
+					var userInput = document.getElementById('userInfo').elements[i].value;
+          userFormArray.push(userInput);
+        }
+        function userInfoArrayToObject (array) {
+					var userInfoObject = {"email" : array[3], "lastName" : array[1], "name" : array[0], "program" : array[5], "secondLastName" : array[2], "supervisor" : array[4]}
+					postRefUser.update(userInfoObject);
+				}
+        userInfoArrayToObject(userFormArray);
+      })
+}
+      })
+
+
     //upload profile image to firebase
       //get elements
       var loader = document.getElementById('loader')
