@@ -95,6 +95,7 @@ btnLogout.addEventListener('click', e => {
             $("#loginInfo").show();
             $("#loginLi").show();
             $("#logoutLi").fadeOut('fast');
+            
           }
           });
 
