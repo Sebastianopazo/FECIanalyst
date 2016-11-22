@@ -69,7 +69,7 @@
     position: absolute;
     left: 50%;
     margin-left: -35px;
-    bottom: 130px;
+    bottom: 165px;
 }
 
 .bubble2 {
@@ -101,7 +101,6 @@
     position: absolute;
     left: 50%;
     margin-left: -35px;
-    bottom: 130px;
 }
 
 .arrow2 {
@@ -135,10 +134,24 @@
   padding-bottom: 5px;
 }
 
+.bubble p {
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
 /*end of Login bubble*/
 
 
 /*misc classes and ID's*/
+.centerLightbox {
+  padding: 30px;
+}
+
+
 #light, #light2, #light3, #light4, #light5 {
   position: fixed;
   top: 10px;
@@ -202,6 +215,8 @@
   height: 200px;
   width: 200px;
   border: solid black 1px;
+  padding:10px;
+  margin: auto;
 }
 
 #successPatient {
