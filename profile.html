@@ -128,13 +128,13 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input_1" style="margin-bottom:30px">
-                                            <input id="supervisor" value="Verónica Bagladi" type="text" name="supervisor" autocomplete="off" readonly="readonly">
+                                            <input id="supervisor" value="" type="text" name="supervisor" autocomplete="off" readonly="readonly">
                                             <span class="active">Supervisor</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input_1" style="margin-bottom:30px">
-                                            <input id="program" value="Masters 2015" type="text" name="program" autocomplete="off" readonly="readonly">
+                                            <input id="program" value="" type="text" name="program" autocomplete="off" readonly="readonly">
                                             <span class="active">Program</span>
                                         </div>
                                     </div>
@@ -224,7 +224,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input_1" style="margin-bottom:30px">
-                                        <input type="text" name="email" autocomplete="off">
+                                        <input id="supervisor" type="text" name="email" value="" autocomplete="off">
                                         <span>Supervisor</span>
                                     </div>
                                 </div>
@@ -337,17 +337,31 @@
   <!--hidden lightbox to add profile pic-->
         <div id="light5" class="white_content wow fadeInUp">
           <div class="centerLightbox">
+            <h2 class="small-title montserrat-text uppercase">
+                Change Profile Picture
+            <h2>
             <div class="col-md-6">
-              <h2 class="small-title montserrat-text uppercase">
-                  Edit Profile Picture:
-              <h2>
               <img id="profileImage3" src="" alt="" />
               <h4>Upload New Image</h4>
               <input id="uploadImage" type="file" accept="image/*">
               <progress id="loader" value="0" max="100">0%</progress>
+            </div>
+            <div class="col-md-6">
+              <h5>Previous Pictures:</h5>
+              <div id="imgGrid">
+
+              </div>
+            </div>
+            <div class="col-md-12">
+              <h2>
+                  Edit Profile Picture:
+              <h2>
+            </div>
+            <div class="col-md-12">
+              <a href="javascript:void(0)" onclick="document.getElementById('light5').style.display='none';document.getElementById('fade5').style.display='none'" class="btn green2">Save Changes</a>
               <a href="javascript:void(0)" onclick="document.getElementById('light5').style.display='none';document.getElementById('fade5').style.display='none'" class="btn green2">Cancel</a>
             </div>
-      </div>
+        </div>
   </div>
   <div id="fade5" class="black_overlay"></div>
 
@@ -378,7 +392,7 @@
           $("#lastName").val(userInfo[1]);
           $("#secondLastName").val(userInfo[5]);
           $("#email").val(userInfo[0]);
-          $("#supevisor").val(userInfo[6]);
+          $("#supervisor").val(userInfo[6]);
           $("#program").val(userInfo[4]);
           $("#name2").val(userInfo[2]);
           $("#lastName2").val(userInfo[1]);
@@ -419,7 +433,6 @@
       }
     })
 
-
     //upload profile image to firebase
 
     //edit profile image with lightbox
@@ -455,13 +468,21 @@
                 function complete(){
                 }
               );
-              //update profile picture path on user
-              function replaceProfileImage(imageUrl) {
-                firebase.database().ref('users/' + currentUserUID).update({
-                  profilePicture : imageUrl
-                });
+              //add profile picture path on user data
+              function addProfileImagePath() {
+                firebase.database().ref('users/' + currentUserUID + "/profilePics").push(file.name);
               }
-              replaceProfileImage(currentUserUID + '/profilePic/' + file.name);
+              addProfileImagePath();
+              var storage = firebase.storage();
+              var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
+                gsReference.child(currentUserUID).child('profilePic').child(file.name).getDownloadURL().then(function(url){
+                //append pic
+                $("#profileImage").attr("src", url)
+                $("#profileImage2").attr("src", url)
+                $("#profileImage3").attr("src", url)
+                profileImage = url;
+              });
+
               $("#loader").fadeIn('fast').delay(1000).fadeOut("fast");
         }
         });

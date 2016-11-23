@@ -1,3 +1,6 @@
+
+
+
 // login and logout bubble toggle; hide login and logout bubble when clicked outside
 
 $(document).click(function(e) {

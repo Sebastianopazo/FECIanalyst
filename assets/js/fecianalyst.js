@@ -1,3 +1,5 @@
+  var profileImage;
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAt_5-XB3_KtoNA3dQGRavk9xNuMIHGajg",
@@ -9,7 +11,10 @@
   firebase.initializeApp(config);
   var database = firebase.database();
 //
-
+var user = firebase.auth().currentUser;
+if (user != null) {
+  console.log(user.uid);
+}
 
 //getting global elements from html for login
   const txtEmail = document.getElementById('txtEmail');
@@ -31,7 +36,7 @@
     }
   });
 
-//add login event
+//add login event to login button
 btnLogin.addEventListener('click', e => {
   //get email and password
   const email = txtEmail.value;
@@ -42,10 +47,11 @@ btnLogin.addEventListener('click', e => {
   promise.catch(e => console.log(e.message));
   $('#txtPassword').val('');
   $('#txtEmail').val('');
-  firebase.auth().onAuthStateChanged(firebaseUser =>{ if (firebaseUser) { window.location = 'dashboard.html';}});
+  firebase.auth().onAuthStateChanged(firebaseUser =>{ if (firebaseUser) {
+    window.location = 'dashboard.html';}});
 });
 
-//Log out
+//Log out with logout button
 
 btnLogout.addEventListener('click', e => {
     $("#logoutBubble").fadeOut('fast');
@@ -95,28 +101,37 @@ btnLogout.addEventListener('click', e => {
             $("#loginInfo").show();
             $("#loginLi").show();
             $("#logoutLi").fadeOut('fast');
-            
+
           }
           });
 
 
-//Get profile Image and put it on logoutBubble
+//Get profile Image and put it on HTML.
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
       var currentUserUID = firebaseUser.uid;
       var storage = firebase.storage();
       var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
-      const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePicture');
+      //reference to image keys on user data
+      const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePics');
       profileImgKeyRef.on('value', function(imageSnapshot){
-        var imagePath = JSON.stringify(imageSnapshot.val()).replace(/^"(.*)"$/, '$1');
-        const profileImgRef = gsReference.child(imagePath).getDownloadURL().then(function(url) {
-          $("#profileImage").attr("src", url)
-          $("#profileImage2").attr("src", url)
-          $("#profileImage3").attr("src", url)
-                  }).catch(function(error) {
-            // Handle any errors
-          });
-      });
-      }
+        var imagePath = imageSnapshot.val();
+        //empty image grid before reloading
+        var i = 0;
+        $("#imgGrid").empty();
+          //Get all profile Images and put the on imagegrid (profile.html)
+
+          while (Object.keys(imagePath)[i] != null) { //as long as the imagePath element is not null, keep going.
+            //get a specific Pic info
+           var currentPicId = Object.values(imagePath)[i];
+           gsReference.child(currentUserUID).child('profilePic').child(currentPicId).getDownloadURL().then(function(url){
+             //append pic to grid
+              $("#imgGrid").append("<img src='"+ url +"'>");
+           });
+              i++;
+            }
+         })
+
+        }
     });
