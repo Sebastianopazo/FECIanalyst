@@ -149,12 +149,12 @@
                 <div class="col-md-3">
                     <a class="tooltips_item4 wow fadeInUp">
                         <div>
-                            <h3>PROFILE IMAGE</h3>
+                            <h3>Profile Picture</h3>
                             <img id="profileImage2" src="" alt="" />
                         </div>
                         <div class="tooltips_item_hover">
                             <div class="item_info">
-                                <span>Edit Profile Image</span>
+                                <span>Edit Profile Picture</span>
                                 <em id="editPicture"><div class="edit2"></div>EDIT</em>
                             </div>
                         </div>
@@ -275,7 +275,7 @@
     </footer>
 
     <!--hidden lightbox form for adding profile information-->
-    <div id="light" class="white_content wow fadeInUp">
+    <div id="light" class="white_content">
         <h2 class="small-title montserrat-text uppercase">
 			Edit Profile Information:
 		<h2>
@@ -335,31 +335,27 @@
 	</div>
 	<div id="fade" class="black_overlay"></div>
   <!--hidden lightbox to add profile pic-->
-        <div id="light5" class="white_content wow fadeInUp">
+        <div id="light5" class="white_content">
           <div class="centerLightbox">
             <h2 class="small-title montserrat-text uppercase">
                 Change Profile Picture
             <h2>
             <div class="col-md-6">
               <img id="profileImage3" src="" alt="" />
-              <h4>Upload New Image</h4>
+              <h4>Upload New Picture</h4>
               <input id="uploadImage" type="file" accept="image/*">
-              <progress id="loader" value="0" max="100">0%</progress>
-            </div>
-            <div class="col-md-6">
-              <h5>Previous Pictures:</h5>
-              <div id="imgGrid">
-
+              <div class="progress" id="loader">
+                <div id="loaderBar" class="progress-bar progress-bar-striped active" role="progressbar" style="width: 0%; background-color: #84aabc">0%</div>
               </div>
             </div>
-            <div class="col-md-12">
-              <h2>
+            <div class="col-md-6">
+              <h4>
                   Edit Profile Picture:
-              <h2>
+              <h4>
             </div>
             <div class="col-md-12">
-              <a href="javascript:void(0)" onclick="document.getElementById('light5').style.display='none';document.getElementById('fade5').style.display='none'" class="btn green2">Save Changes</a>
-              <a href="javascript:void(0)" onclick="document.getElementById('light5').style.display='none';document.getElementById('fade5').style.display='none'" class="btn green2">Cancel</a>
+              <a id="updateImage" class="btn green2">Save Changes</a>
+              <a href="javascript:void(0)" onclick="$('#light5').fadeOut('fast');$('#fade5').fadeOut('fast')" class="btn green2">Cancel</a>
             </div>
         </div>
   </div>
@@ -378,7 +374,6 @@
 		});
 	</script>
   <script type="text/javascript">
-
     //get profile information from firebase
     firebase.auth().onAuthStateChanged(firebaseUser =>{
     	if (firebaseUser) {
@@ -431,61 +426,82 @@
         userInfoArrayToObject(userFormArray);
         })
       }
-    })
+    });
+    //upload profile image to firebase==========================================
 
-    //upload profile image to firebase
-
-    //edit profile image with lightbox
-      $("#editPicture").click(function(){
-        document.getElementById('light5').style.display='block';
-        document.getElementById('fade5').style.display='block';
-      });
-      //get elements
-      var loader = document.getElementById('loader')
-      var uploadImage = document.getElementById('uploadImage');
-        //listen for file selection
-        uploadImage.addEventListener('change', function(e) {
-        //get file
-        var file = e.target.files[0];
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebaseUser) {
-              var currentUserUID = firebaseUser.uid;
-              //make reference
-              var storageRef = firebase.storage().ref(currentUserUID + '/profilePic/' + file.name);
-              //Upload File
-              var task = storageRef.put(file);
-
-              //Update progress
-              task.on('state_changed',
-                function progress(snapshot) {
-                  var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                  loader.value = percentage;
-
-                },
-                function error(err){
-
-                },
-                function complete(){
-                }
-              );
-              //add profile picture path on user data
-              function addProfileImagePath() {
-                firebase.database().ref('users/' + currentUserUID + "/profilePics").push(file.name);
-              }
-              addProfileImagePath();
-              var storage = firebase.storage();
-              var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
-                gsReference.child(currentUserUID).child('profilePic').child(file.name).getDownloadURL().then(function(url){
-                //append pic
-                $("#profileImage").attr("src", url)
-                $("#profileImage2").attr("src", url)
-                $("#profileImage3").attr("src", url)
-                profileImage = url;
-              });
-
-              $("#loader").fadeIn('fast').delay(1000).fadeOut("fast");
-        }
+firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+        var currentUserUID = firebaseUser.uid;
+        var file;
+        $( document ).ready(function() {
+                var storage = firebase.storage();
+                var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
+                //reference to image keys on user data
+                const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePic');
+                profileImgKeyRef.on('value', function(imageSnapshot){
+                  var imagePath = imageSnapshot.val();
+                  var currentPic = gsReference.child(currentUserUID).child('profilePic').child(imagePath).getDownloadURL().then(function(url){
+                    $("#profileImage").attr("src", url)
+                    $("#profileImage2").attr("src", url)
+                    $("#profileImage3").attr("src", url)
+                  });
         });
+      });
+        //edit profile image with lightbox
+          $("#editPicture").click(function(){
+            $("#uploadImage").val('');
+            $('#light5').fadeIn('fast');
+            $('#fade5').fadeIn('fast');
+          });
+        //when upload with upload file input, update thubmbail.
+        document.getElementById("uploadImage").onchange = function (e) {
+        var reader = new FileReader();
+        file = e.target.files[0]; //update this variable for latter use
+        reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("profileImage3").src = e.target.result;
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(this.files[0]);
+        };
+        //when click on save, show upload bar and wait till upload is done. Then, close lighbox and show success or fail message respectively.
+        var loaderBar = document.getElementById('loaderBar');
+        var updateImage = document.getElementById('updateImage');
+        updateImage.addEventListener('click', function (){
+        //make reference to firebase storage
+        var storageRef = firebase.storage().ref(currentUserUID + '/profilePic/' + file.name);
+        //make reference to firebase database key
+        var dbRef = firebase.database().ref('users/' + currentUserUID + "/profilePic");
+        //make reference to current image path
+        dbRef.on('value', function(imageSnapshot){
+          var imagePath = imageSnapshot.val();
+          //delete current image
+          var currentImgRef = firebase.storage().ref(currentUserUID + '/profilePic/' + imagePath)
+          currentImgRef.delete().then(function() {
+          // When File deleted successfully Upload new image
+              var task = storageRef.put(file);
+              //Update progress
+              $("#loader").fadeIn('fast');
+              task.on('state_changed', function progress(snapshot) {
+                var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                $('#loaderBar').text(percentage + '%');
+                $('#loaderBar').attr('aria-valuenow', percentage + '%').css('width', percentage + '%');
+              }, function error(error){
+                  window.alert(error);
+                  //on error, show failure div.
+                }, function complete(){
+
+                  //on complete, update image path to current image and refresh page
+                  dbRef.set(file.name);
+                  location.reload();
+              });
+          }).catch(function(error) {
+          window.alert(error)
+            })
+          });
+        })
+      }
     });
 
   </script>

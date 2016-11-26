@@ -109,29 +109,21 @@ btnLogout.addEventListener('click', e => {
 //Get profile Image and put it on HTML.
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser) {
-      var currentUserUID = firebaseUser.uid;
-      var storage = firebase.storage();
-      var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
-      //reference to image keys on user data
-      const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePics');
-      profileImgKeyRef.on('value', function(imageSnapshot){
-        var imagePath = imageSnapshot.val();
-        //empty image grid before reloading
-        var i = 0;
-        $("#imgGrid").empty();
-          //Get all profile Images and put the on imagegrid (profile.html)
-
-          while (Object.keys(imagePath)[i] != null) { //as long as the imagePath element is not null, keep going.
-            //get a specific Pic info
-           var currentPicId = Object.values(imagePath)[i];
-           gsReference.child(currentUserUID).child('profilePic').child(currentPicId).getDownloadURL().then(function(url){
-             //append pic to grid
-              $("#imgGrid").append("<img src='"+ url +"'>");
-           });
-              i++;
-            }
-         })
-
-        }
-    });
+            if (firebaseUser) {
+              var currentUserUID = firebaseUser.uid;
+                $(document).ready(function() {
+                    var storage = firebase.storage();
+                    var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
+                    //reference to image keys on user data
+                    const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePic');
+                    profileImgKeyRef.on('value', function(imageSnapshot) {
+                        var imagePath = imageSnapshot.val();
+                        var currentPic = gsReference.child(currentUserUID).child('profilePic').child(imagePath).getDownloadURL().then(function(url) {
+                            $("#profileImage").attr("src", url)
+                            $("#profileImage2").attr("src", url)
+                            $("#profileImage3").attr("src", url)
+                        });
+                    });
+                });
+              }
+            });

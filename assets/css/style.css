@@ -168,6 +168,7 @@
 
 #loader {
   display: none;
+  margin-top: 10px;
 }
 
 #titleName, #titleLastName {
