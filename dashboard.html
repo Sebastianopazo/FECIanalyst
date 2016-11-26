@@ -90,53 +90,30 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green"><span>Add Patient</span></a>
+                <div class="col-md-10">
+                    <a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green2"><span>Add Patient</span></a>
+                </div>
+                <div class="col-md-2">
+                    <h5>Actions</h5>
                 </div>
             </div>
             <div class="row">
                 <div id="successPatient" class="alert alert-success">
                     <strong>Success! </strong>Patient created!
                 </div>
-                <div class="widget wow fadeInUp">
-                    <ul id="patientList" class="list">
+                <div class="col-md-10">
+                  <ul id="patientList" class="list"></ul>
+                </div>
+                <div class="col-md-2">
+                  <ul id="crud" class="list_2"></ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Login Info -->
-    <section id="loginInfo" class="green-section wow fadeInUp" style="padding:50px 0">
+    <!-- signup Info -->
+    <section id="signupInfo" class="green-section wow fadeInUp" style="padding:50px 0">
         <div class="container">
-            <div class="col-md-6 col-sm-12">
-                <div class="row">
-                    <div class="green-section" style="padding:20px">
-                        <span class="white-text montserrat-text uppercase" style="font-size:24px;display:block;">
-						Returning User?
-					</span>
-                        <p class="white-text">
-                            Login Here!
-                        </p>
-                        <div class="row">
-                            <form action="#" method="post">
-                                <div class="col-md-10 spaceup">
-                                    <div class="input_3" style="margin-bottom:30px">
-                                        <input id=txtEmail type="text" name="name" autocomplete="off">
-                                        <span>Email</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="input_3" style="margin-bottom:30px">
-                                        <input id=txtPassword type="password" name="name" autocomplete="off">
-                                        <span>Password</span>
-                                    </div>
-                                </div>
-                        </div>
-                        <a href="#" id="btnLogin" class="btn white" style="margin-top:30px"><span>Login</span></a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-12">
                 <div class="row">
                     <div class="white-section" style="padding:20px">
                         <span class="montserrat-text uppercase" style="font-size:24px">Create a New User</span>
@@ -147,36 +124,68 @@
                             <form action="#" method="post">
                                 <div class="col-md-6">
                                     <div class="input_1" style="margin-bottom:30px">
-                                        <input id="txtEmail2" type="text" name="Email" autocomplete="off">
+                                        <input id="signupEmail" type="text" name="Email" autocomplete="off">
                                         <span>Email</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input_1" style="margin-bottom:30px">
-                                        <input type="text" name="Name" autocomplete="off">
+                                        <input id="signupName" type="text" name="Name" autocomplete="off">
                                         <span>Name</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input_1" style="margin-bottom:30px">
-                                        <input type="text" name="Last Name" autocomplete="off">
+                                        <input id="signupLastName" type="text" name="Last Name" autocomplete="off">
                                         <span>Last Name</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input_1" style="margin-bottom:30px">
-                                        <input type="text" name="email" autocomplete="off">
+                                        <input id="signupSecondLastName" type="text" name="Second Last Name" autocomplete="off">
+                                        <span>Second Last Name</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_1" style="margin-bottom:15px">
+                                        <input id="signupSupervisor" type="text" name="email" autocomplete="off">
                                         <span>Supervisor</span>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="input_1" style="margin-bottom:30px">
-                                        <input id="txtPass2" type="text" name="code" autocomplete="off">
-                                        <span>Code</span>
+                                <div class="col-md-6">
+                                    <div class="input_1" style="margin-bottom:15px">
+                                        <input id="signupCode" type="text" name="code" autocomplete="off">
+                                        <span>Security Code</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_3" style="margin-bottom:15px">
+                                        <input id="signupPassword" type="password" name="password" autocomplete="off">
+                                        <span>Password</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_3" style="margin-bottom:15px">
+                                        <input id="signupPassword2" type="password" name="password2" autocomplete="off">
+                                        <span>Repeat Password</span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <a id="btnSignup" href="#" class="btn green"><span>Sign Up	</span></a>
+                                    <h4 class="selectTitle">Program</h4>
+                                    <select id="signupProgram" name="program">
+                                      <option value="Masters 2015">Select</option>
+                                      <option value="Masters 2015">Masters 2015</option>
+                                      <option value="Masters 2016">Masters 2016</option>
+                                      <option value="Masters 2017">Masters 2017</option>
+                                      <option value="Internship">Internship</option>
+                                      <option value="Certificate 2015">Certificate 2015</option>
+                                      <option value="Certificate 2016">Certificate 2016</option>
+                                      <option value="Certificate 2017">Certificate 2017</option>
+                                      <option value="Supervisor">Supervisor</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <a id="btnSignUp" href="#" class="btn green"><span>Sign Up	</span></a>
                                 </div>
                             </form>
                         </div>
@@ -278,6 +287,9 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 			//loop to get all patients from database
 			var i = 0;
 			$("#patientList").empty();
+      if (patientList == null) {
+        window.alert('you don`t have any patients!')
+      } else{
 			while (Object.keys(patientList)[i] != null) {
 				//get a specific patient info
 				var currentPatientId = Object.keys(patientList)[i];
@@ -285,12 +297,13 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 					//append info to list
 					//create function to filter and append name and lastnames from patients
 					function addNamesToList (array) {
-						$("#patientList").append("<li class='patient'><a href='#'>"+ array[3] + " " + array[2] + " " + array[5] +"<span><div class='info'></div><div class='edit'></div><div id='" + currentPatientId +"'class='delete'></div></span></a></li>");
+						$("#patientList").append("<li class='patient'><a href='"+ array [3] + array [2] + array [5]+".html'>"+ array[3] + " " + array[2] + " " + array[5] +"<span><div id='" + currentPatientId +"></div></span></a></li>");
+            $("#crud").append("<li><div class='crudWrapper'><a class='info' href='#'></a><a class='edit' href='#'></a><a class='delete' href='#'></a></div></li>")
 					}
 
 					addNamesToList(patientToArray);
 					i++;
-				}
+				}}
  				}, function(error) {
 						console.log(error);
 		});
@@ -324,8 +337,6 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 				lightBox1.style.display='none';
 				fade.style.display='none';
 				$("#successPatient").fadeIn('fast').delay(2000).fadeOut("fast");
-
-
 
 		});
 	};

@@ -175,7 +175,7 @@
   display: inline-block;
 }
 
-#selectTitle {
+.selectTitle {
     color: #84aabc;
     font-size: 10px;
     top: 0px;
@@ -305,18 +305,20 @@
     }
 }
 
+.crudWrapper {
+  padding: 17.5px!important;
+}
 .delete {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height:20px;
     background-size: cover;
     background-image: url('../../images/delete.png');
     display: inline-block;
-    position: absolute;
 }
 
 .edit {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background-size: cover;
     background-image: url('../../images/edit.png');
     display: inline-block;
@@ -335,12 +337,13 @@
 }
 
 .info {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background-size: cover;
     background-image: url('../../images/info.png');
     display: inline-block;
     margin-right: 10px;
+    margin-left: 10px
 }
 
 .plus {
@@ -350,6 +353,10 @@
     background-image: url('../../images/plus.png');
     display: inline-block;
     margin-right: 5px;
+}
+
+.save {
+
 }
 
 .hide {
@@ -1841,4 +1848,5 @@ select {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     color: #9a9a9a;
+    margin-bottom: 20px;
 }

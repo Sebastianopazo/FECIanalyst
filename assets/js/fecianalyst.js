@@ -1,4 +1,3 @@
-  var profileImage;
 
   // Initialize Firebase
   var config = {
@@ -20,11 +19,8 @@ if (user != null) {
   const txtEmail = document.getElementById('txtEmail');
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
-  const btnSignUp = document.getElementById('btnSignup');
   const btnLogout = document.getElementById('btnLogout');
-  const txtEmail2 = document.getElementById('txtEmail2');
-  const txtPass2 = document.getElementById('txtPass2');
-  const loginInfo = document.getElementById('loginInfo');
+  const signupInfo = document.getElementById('signupInfo');
 
 
   //login bubble login by pressing enter
@@ -48,7 +44,9 @@ btnLogin.addEventListener('click', e => {
   $('#txtPassword').val('');
   $('#txtEmail').val('');
   firebase.auth().onAuthStateChanged(firebaseUser =>{ if (firebaseUser) {
-    window.location = 'dashboard.html';}});
+    window.location = 'dashboard.html';
+    }
+  });
 });
 
 //Log out with logout button
@@ -63,11 +61,61 @@ btnLogout.addEventListener('click', e => {
     });
 });
 
+//Sign Up!=====================================================================
+
+//get info from SignUp Form
+const signupEmail = document.getElementById('signupEmail');
+const signupName = document.getElementById('signupName');
+const signupLastName = document.getElementById('signupLastName');
+const signupSecondLastName = document.getElementById('signupSecondLastName');
+const signupSupervisor = document.getElementById('signupSupervisor');
+const signupPassword = document.getElementById('signupPassword');
+const signupPassword2 = document.getElementById('signupPassword2');
+const signupCode = document.getElementById('signupCode');
+const signupProgram = document.getElementById('signupProgram');
+const btnSignUp = document.getElementById('btnSignUp');
+
+//create user and password on submit click
+btnSignUp.addEventListener('click', e => {
+  //get email and password
+  const email = signupEmail.value;
+  const pass = signupPassword.value;
+  const name = signupName.value;
+  const lastName = signupLastName.value;
+  const secondLastName = signupSecondLastName.value;
+  const supervisor = signupSupervisor.value;
+  const program = signupProgram.value;
+  const auth = firebase.auth();
+  //Create user on firebase AUTH
+  const promise = auth.createUserWithEmailAndPassword(email, pass);
+  promise.catch(e => window.alert(e.message));
+  firebase.auth().onAuthStateChanged(firebaseUser =>{ if (firebaseUser) {
+    //get uid from new user
+    newUserUID = firebaseUser.uid;
+    //Push New user to database
+    const postRefNewUser = firebase.database().ref('users').child(newUserUID);
+    //upload user object to firebase
+    postRefNewUser.set({
+        email: email,
+        name: name,
+        lastName: lastName,
+        secondLastName: secondLastName,
+        supervisor: supervisor,
+        program: program,
+        uid: newUserUID,
+        profilePic: ""
+    })
+    //redirect to dashboard when ready
+    window.location = 'dashboard.html';
+    }
+  });
+});
+
 
 //get Current user name and lastname from server and put it on the logout bubble and page title
         firebase.auth().onAuthStateChanged(firebaseUser =>{
           if (firebaseUser) {
-            $("#loginInfo").fadeOut('slow');
+            $("#signupInfo").fadeOut('slow');
             $("#loginLi").hide();
             $("#logoutLi").fadeIn('fast');
             $("#loginBubble").fadeOut('fast');
@@ -116,14 +164,23 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                     var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
                     //reference to image keys on user data
                     const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePic');
-                    profileImgKeyRef.on('value', function(imageSnapshot) {
-                        var imagePath = imageSnapshot.val();
-                        var currentPic = gsReference.child(currentUserUID).child('profilePic').child(imagePath).getDownloadURL().then(function(url) {
-                            $("#profileImage").attr("src", url)
-                            $("#profileImage2").attr("src", url)
-                            $("#profileImage3").attr("src", url)
+                        profileImgKeyRef.on('value', function(imageSnapshot) {
+                          var imagePath = imageSnapshot.val();
+                              if (imagePath == "") {
+                                var defaultImg = 'https://sebastianopazo.github.io/WebProject/images/default-user.png';
+                                $("#profileImage").attr("src", defaultImg)
+                                $("#profileImage2").attr("src", defaultImg)
+                                $("#profileImage3").attr("src", defaultImg)
+                              } else {
+                              var currentPic = gsReference.child(currentUserUID).child('profilePic').child(imagePath).getDownloadURL().then(function(url) {
+                              $("#profileImage").attr("src", url)
+                              $("#profileImage2").attr("src", url)
+                              $("#profileImage3").attr("src", url)
+                              }).catch(function(error) {
+                                window.alert(error);
+                            })
+                          }
                         });
                     });
-                });
-              }
-            });
+                  }
+                })
