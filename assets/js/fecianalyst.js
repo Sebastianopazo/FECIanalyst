@@ -9,11 +9,7 @@
   };
   firebase.initializeApp(config);
   var database = firebase.database();
-//
-var user = firebase.auth().currentUser;
-if (user != null) {
-  console.log(user.uid);
-}
+
 
 //getting global elements from html for login
   const txtEmail = document.getElementById('txtEmail');
@@ -55,7 +51,9 @@ btnLogout.addEventListener('click', e => {
     $("#logoutBubble").fadeOut('fast');
     firebase.auth().signOut();
     firebase.auth().onAuthStateChanged(firebaseUser => {
-        if (firebaseUser) {} else {
+        if (firebaseUser) {
+
+        } else {
             window.location = 'index.html';
         }
     });
@@ -145,42 +143,38 @@ btnSignUp.addEventListener('click', e => {
             }, function(error) {
               console.log(error);
             });
+
+
+            //Get profile Image and put it on HTML.
+
+            $(document).ready(function() {
+                var storage = firebase.storage();
+                var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
+                //reference to image keys on user data
+                const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePic');
+                    profileImgKeyRef.on('value', function(imageSnapshot) {
+                      var imagePath = imageSnapshot.val();
+                          if (imagePath == "") {
+                            var defaultImg = 'https://sebastianopazo.github.io/WebProject/images/default-user.png';
+                            $("#profileImage").attr("src", defaultImg)
+                            $("#profileImage2").attr("src", defaultImg)
+                            $("#profileImage3").attr("src", defaultImg)
+                          } else {
+                          var currentPic = gsReference.child(currentUserUID).child('profilePic').child(imagePath).getDownloadURL().then(function(url) {
+                          $("#profileImage").attr("src", url)
+                          $("#profileImage2").attr("src", url)
+                          $("#profileImage3").attr("src", url)
+                          }).catch(function(error) {
+                            window.alert(error);
+                        })
+                      }
+                    });
+                });
+                $('#overlay').fadeOut('slow');
             } else {
             $("#loginInfo").show();
             $("#loginLi").show();
             $("#logoutLi").fadeOut('fast');
-
           }
           });
-
-
-//Get profile Image and put it on HTML.
-
-firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebaseUser) {
-              var currentUserUID = firebaseUser.uid;
-                $(document).ready(function() {
-                    var storage = firebase.storage();
-                    var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
-                    //reference to image keys on user data
-                    const profileImgKeyRef = firebase.database().ref('users').child(currentUserUID).child('profilePic');
-                        profileImgKeyRef.on('value', function(imageSnapshot) {
-                          var imagePath = imageSnapshot.val();
-                              if (imagePath == "") {
-                                var defaultImg = 'https://sebastianopazo.github.io/WebProject/images/default-user.png';
-                                $("#profileImage").attr("src", defaultImg)
-                                $("#profileImage2").attr("src", defaultImg)
-                                $("#profileImage3").attr("src", defaultImg)
-                              } else {
-                              var currentPic = gsReference.child(currentUserUID).child('profilePic').child(imagePath).getDownloadURL().then(function(url) {
-                              $("#profileImage").attr("src", url)
-                              $("#profileImage2").attr("src", url)
-                              $("#profileImage3").attr("src", url)
-                              }).catch(function(error) {
-                                window.alert(error);
-                            })
-                          }
-                        });
-                    });
-                  }
-                })
+          $('#overlay').delay(1000).fadeOut("slow");

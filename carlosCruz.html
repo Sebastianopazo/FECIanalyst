@@ -56,7 +56,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green"><span><div class="edit2"></div>Edit Info</span></a>
+					<a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green"><div class="edit2"></div><span>Edit Info</span></a>
 				</div>
 			</div>
 			<div class="row">
@@ -92,10 +92,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<a href="javascript:void(0)" onclick="$('#light2').fadeIn('fast');$('#fade2').fadeIn('fast');" class="btn green"><span><div class="plus"></div>Add Measure</span></a>
+					<a href="javascript:void(0)" onclick="$('#light2').fadeIn('fast');$('#fade2').fadeIn('fast');" class="btn green"><div class="plus"></div><span>Add Measure</span></a>
 				</div>
 			</div>
 			<div class="row">
+				<div class="alert alert-info">
+					<strong>There are no measures recorded for this patient</strong>
+					<div class="">
+						Add Measure
+					</div>
+				</div>
 				<div class="widget wow fadeInUp">
 					<ul class="list">
 						<li>
@@ -234,7 +240,7 @@
 		</div>
 	</footer>
 	<!--hidden lightbox form for editing patients-->
-	<div id="light" class="white_content wow fadeInUp">
+	<div id="light" class="white_content">
 		<h2 class="small-title montserrat-text uppercase">
 			Edit Patient Information:
 		<h2>
@@ -269,7 +275,7 @@
 	<div id="fade" class="black_overlay"></div>
 	<!--end of Lightbox-->
 	<!--hidden lightbox form for adding measures-->
-	<div id="light2" class="white_content wow fadeInUp">
+	<div id="light2" class="white_content">
 		<h2 class="small-title montserrat-text uppercase">
 			Add Measures:
 		<h2>
@@ -285,7 +291,7 @@
 	<div id="fade2" class="black_overlay"></div>
 	<!--end of Lightbox-->
 	<!--hidden lightbox form for adding epq-->
-	<div id="light3" class="white_content wow fadeInUp">
+	<div id="light3" class="white_content">
 		<h2 class="small-title montserrat-text uppercase">
 			Add EPQ Information:
 		<h2>
@@ -420,7 +426,7 @@
 		<div id="fade3" class="black_overlay"></div>
 		<!--end of Lightbox-->
 		<!--hidden lightbox form for adding Rathus Assertiveness Schedule-->
-		<div id="light4" class="white_content wow fadeInUp">
+		<div id="light4" class="white_content">
 			<h2 class="small-title montserrat-text uppercase">
 				Add Rathus Assertiveness Schedule Information:
 			<h2>

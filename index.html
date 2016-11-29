@@ -235,6 +235,14 @@
             new WOW().init();
         });
     </script>
+    <script type="text/javascript">
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+      if (firebaseUser) {
+        window.location = 'dashboard.html';
+      }
+  
+      });
+    </script>
 </body>
 
 </html>
