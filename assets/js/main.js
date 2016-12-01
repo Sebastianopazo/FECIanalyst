@@ -5,29 +5,28 @@
 
 $(document).click(function(e) {
   if( e.target.id === 'loginLi') {
-    $("#loginBubble").fadeToggle('fast');
-    $(".arrow").slideToggle("medium");
+    $('#loginBubble').fadeToggle('fast');
+    $('.arrow').slideToggle('medium');
   }
 });
 
 $(document).click(function(e) {
   if( e.target.id === 'logoutLi') {
-    $("#logoutBubble").fadeToggle('fast');
-    $(".arrow2").slideToggle("medium");
+    $('#logoutBubble').fadeToggle('fast');
+    $('.arrow2').slideToggle('medium');
   }
 });
-
 $(document).ready(function()
 {
     $(document).mouseup(function(e)
     {
-        var subject = $("#loginBubble");
+        var subject = $('#loginBubble');
 
         if(e.target.id != subject.attr('id') && e.target.id != 'loginLi' && e.target.id != 'txtEmail' && e.target.id != 'txtPassword' )
 
         {
             subject.fadeOut('fast');
-            $(".arrow").slideUp("medium");
+            $('.arrow').slideUp('medium');
         }
     });
 });
@@ -36,13 +35,13 @@ $(document).ready(function()
 {
     $(document).mouseup(function(e)
     {
-        var subject = $("#logoutBubble");
+        var subject = $('#logoutBubble');
 
         if(e.target.id != subject.attr('id') && e.target.id != 'logoutLi')
 
         {
             subject.fadeOut('fast');
-            $(".arrow2").slideUp("medium");
+            $('.arrow2').slideUp('medium');
         }
     });
 });
@@ -51,8 +50,8 @@ $(document).ready(function()
 
 $(document).on( 'keydown', function (key) {
     if (key.keyCode === 27 ) {
-        $("#loginBubble").fadeOut('fast');
-        $(".arrow").fadeOut('fast');
+        $('#loginBubble').fadeOut('fast');
+        $('.arrow').fadeOut('fast');
     }
 });
 
@@ -60,8 +59,8 @@ $(document).on( 'keydown', function (key) {
 (function($){
 	$(window).load(function(){
 		// INITIALIZE ANIMSITION
-		if($(".animsition").length){
-			$(".animsition").animsition({
+		if($('.animsition').length){
+			$('.animsition').animsition({
 				inClass               :   'fade-in-up-sm',
 				outClass              :   'fade-out-up-sm',
 				inDuration            :    1100,
@@ -80,21 +79,21 @@ $(document).on( 'keydown', function (key) {
 		}
 
 		// INPUTS EVENTS
-		$(".input_1 input, .textarea_1 textarea").focus(function(){
-			$(this).next("span").addClass("active");
+		$('.input_1 input, .textarea_1 textarea').focus(function(){
+			$(this).next('span').addClass('active');
 		});
-		$(".input_1 input, .textarea_1 textarea").blur(function(){
-			if($(this).val() === ""){
-				$(this).next("span").removeClass("active");
+		$('.input_1 input, .textarea_1 textarea').blur(function(){
+			if($(this).val() === ''){
+				$(this).next('span').removeClass('active');
 			}
 		});
 
-		$(".input_3 input, .textarea_1 textarea").focus(function(){
-			$(this).next("span").addClass("active");
+		$('.input_3 input, .textarea_1 textarea').focus(function(){
+			$(this).next('span').addClass('active');
 		});
-		$(".input_3 input, .textarea_1 textarea").blur(function(){
-			if($(this).val() === ""){
-				$(this).next("span").removeClass("active");
+		$('.input_3 input, .textarea_1 textarea').blur(function(){
+			if($(this).val() === ''){
+				$(this).next('span').removeClass('active');
 			}
 		});
 
