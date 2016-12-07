@@ -116,7 +116,7 @@ btnSignUp.addEventListener('click', e => {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
         $('#signupInfo').fadeOut('slow');
-        $('#loginLi').hide();
+        $('#loginLi').fadeOut('fast');
         $('#logoutLi').fadeIn('fast');
         $('#loginBubble').fadeOut('fast');
         //get current user UID
@@ -174,8 +174,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         });
         $('#overlay').fadeOut('slow');
     } else {
-        $('#loginInfo').show();
-        $('#loginLi').show();
+        $('#loginInfo').fadeIn('fast');
+        $('#loginLi').fadeIn('fast');
         $('#logoutLi').fadeOut('fast');
     }
 });

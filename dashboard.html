@@ -293,7 +293,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 			//loop to get all patients from database
 			var i = 0;
 			$("#patientList").empty();
-      if (patientList == null) {
+      if (patientList === null) {
         $('#noPatients').show();
       } else{
 			while (Object.keys(patientList)[i] != null) {
@@ -324,16 +324,16 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 			$("#submitPatientInfo").click(function(){
 				for (var i = 0; i < 6; i++) {
 					var patientInput = document.getElementById("patientInfo").elements[i].value;
-						patientFormArray.push(patientInput)
+						patientFormArray.push(patientInput);
 				}
 				//function to turn the array rom the form into an object that can be sent to firebase; also to upload to database
 				function patientInfoArrayToObject (array) {
-					var patientInfoObject = {"age" : array[3], "intakeDate" : array[5], "lastName" : array[1], "name" : array[0], "recordNumber" : array[4], "secondLastName" : array[2]}
+					var patientInfoObject = {"age" : array[3], "intakeDate" : array[5], "lastName" : array[1], "name" : array[0], "recordNumber" : array[4], "secondLastName" : array[2]};
 					postRefPatients.push().set(patientInfoObject);
 				}
 				patientInfoArrayToObject(patientFormArray);
 				var lightBox1 = document.getElementById('light');
-				var fade = document.getElementById('fade')
+				var fade = document.getElementById('fade');
 				lightBox1.style.display='none';
 				fade.style.display='none';
 				$("#successPatient").fadeIn('fast').delay(2000).fadeOut("fast");
@@ -345,6 +345,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 }
 
 });
+
 //DELETE PATIENTS =============================================================
 
 </script>
