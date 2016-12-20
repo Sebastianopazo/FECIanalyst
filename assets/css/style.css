@@ -147,6 +147,21 @@
 
 
 /*misc classes and ID's*/
+#behavioral {
+  background-color: #f4dead;
+  padding: 30px;
+  display: none;
+}
+
+#affective {
+  background-color: #e5c6db;
+  padding: 30px;
+  display: none;
+}
+
+#model {
+  margin-left: 120px;
+}
 
 #learn {
     padding: 20px;
