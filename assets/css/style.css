@@ -147,6 +147,24 @@
 
 
 /*misc classes and ID's*/
+
+#learn {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#yourPatients {
+    padding: 20px;
+}
+
+#learn a {
+  background-color: white;
+}
+
+#yourPatients a {
+    background-color: white;
+}
+
 .overlay {
     opacity: 0.9;
     background-color: white;

@@ -168,15 +168,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                         $('#profileImage3').attr('src', url);
                     }).catch(function(error) {
                         window.alert(error);
-                    })
+                    });
                 }
             });
         });
-        $('#overlay').fadeOut('slow');
     } else {
         $('#loginInfo').fadeIn('fast');
         $('#loginLi').fadeIn('fast');
         $('#logoutLi').fadeOut('fast');
     }
 });
-$('#overlay').delay(1000).fadeOut('slow');
+
+  $('#overlay').delay(1000).fadeOut('slow');
