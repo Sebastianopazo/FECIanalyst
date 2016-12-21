@@ -94,11 +94,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10">
-                    <a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green2"><div class="plus">             </div><span>Add Patient</span></a>
+                    <a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green2"><span>Add Patient</span></a>
                 </div>
-                <div class="col-md-2">
+                <!-- <div class="col-md-2">
                     <h5>Actions</h5>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div id="successPatient" class="alert alert-success">
@@ -303,7 +303,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 					//append info to list
 					//create function to filter and append name and lastnames from patients
 					function addNamesToList (array) {
-						$("#patientList").append("<li class='patient'><a href='"+ array [3] + array [2] + array [5]+".html'>"+ array[3] + " " + array[2] + " " + array[5] + "</a></li>");
+						$("#patientList").append("<li class='patient'><a href='carlosCruz.html'>"+ array[3] + " " + array[2] + " " + array[5] + "<span><img src='images/edit.png'><span></a></li>");
 					}
 
 					addNamesToList(patientToArray);
