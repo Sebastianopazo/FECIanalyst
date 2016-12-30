@@ -94,11 +94,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10">
-                    <a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green2"><span>Add Patient</span></a>
+                    <a id="addPatient" class="btn green2"><span>Add Patient</span></a>
+                    <a href="dashboard.html" class="btn green2"><span>Back to Dashboard</span></a>
                 </div>
-                <!-- <div class="col-md-2">
+                <div class="col-md-2">
                     <h5>Actions</h5>
-                </div> -->
+                </div>
             </div>
             <div class="row">
                 <div id="successPatient" class="alert alert-success">
@@ -106,12 +107,9 @@
                 </div>
                 <div id="noPatients" class="alert alert-info">
                     <strong>You don't have any patients</strong>
-                    <div class="">
-                      Create Patient
-                    </div>
                 </div>
                 <div class="col-md-12">
-                  <ul id="patientList" class="list"></ul>
+                  <ul id="patientList" class="list_6"></ul>
                 </div>
             </div>
         </div>
@@ -207,7 +205,7 @@
                 <div class="row">
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="index.html" class="animsition-link link">Home</a></li>
+                            <li><a href="dashboard.html" class="animsition-link link">Home</a></li>
                             <li><a href="about.html" class="animsition-link link">about FECI</a></li>
                             <li><a href="faqs.html" class="animsition-link link">FAQs</a></li>
                             <li><a href="techSupport.html" class="animsition-link link">Tech Support</a></li>
@@ -280,7 +278,11 @@
 		});
 	</script>
 	<script type="text/javascript">
-
+	//create function to filter and append name and lastnames from patients
+  function addNamesToList (array, id) {
+    $("#patientList").append("<li class='patient'>"+ array[3] + " " + array[2] + " " + array[5] + "<span><a href='" + id + ".html' class='bubble3 patientPage'><img src='images/edit.png'><span class='tooltiptext'>Edit Patient</span></a><span></li>");
+  }
+//GET PATIENTS INFO============================================================
 
 //get current user patients list from database
 firebase.auth().onAuthStateChanged(firebaseUser =>{
@@ -296,25 +298,26 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
       if (patientList === null) {
         $('#noPatients').show();
       } else{
+        $('#noPatients').hide();
 			while (Object.keys(patientList)[i] != null) {
 				//get a specific patient info
 				var currentPatientId = Object.keys(patientList)[i];
 				var patientToArray = Object.values(patientList[currentPatientId]);
 					//append info to list
-					//create function to filter and append name and lastnames from patients
-					function addNamesToList (array) {
-						$("#patientList").append("<li class='patient'><a href='carlosCruz.html'>"+ array[3] + " " + array[2] + " " + array[5] + "<span><img src='images/edit.png'><span></a></li>");
-					}
-
-					addNamesToList(patientToArray);
+					addNamesToList(patientToArray, currentPatientId);
 					i++;
 				}}
  				}, function(error) {
 						console.log(error);
 		});
 
-
-
+//ADD PATIENTS =============================================================
+//add patient button
+$("#addPatient").click(function() {
+  $('#light').fadeIn('fast');
+  $('#fade').fadeIn('fast');
+  $('#patientInfo')[0].reset();
+});
 //upload information from Patient Form on completion
 			const postRefPatients = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList');
 
@@ -346,7 +349,7 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 
 });
 
-//DELETE PATIENTS =============================================================
+
 
 </script>
 

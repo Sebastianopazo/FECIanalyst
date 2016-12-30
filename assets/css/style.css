@@ -41,7 +41,7 @@
 /*end of Lighbox styles*/
 
 
-/*Login Bubble styles*/
+/* Bubble styles*/
 
 .bubble, .bubble2, .arrow:after, .arrow2:after {
     background: #60606e;
@@ -143,7 +143,51 @@
   text-decoration: underline;
 }
 
-/*end of Login bubble*/
+/* Tooltip bubble */
+
+.bubble3 {
+    position: relative;
+    display: inline-block;
+}
+
+.bubble3 .tooltiptext {
+    font-weight: bold;
+    font-size: 18px;
+    visibility: hidden;
+    width: 120px;
+    background-color: #60606e;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+
+}
+
+.bubble3 .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #60606e transparent transparent transparent;
+}
+
+.bubble3:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*end of  bubble*/
 
 
 /*misc classes and ID's*/
@@ -393,12 +437,11 @@
 }
 
 .edit {
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     background-size: cover;
     background-image: url('../../images/edit.png');
-    display: inline-block;
-    margin-right: 10px;
+    display: block;
 }
 
 .edit2 {
@@ -768,6 +811,15 @@ p {
     line-height: 30px;
 }
 
+p a {
+  color: white;
+  font-weight: bold;
+}
+p a:hover {
+  color: white;
+  cursor: pointer;
+}
+
 ul.social-icons li a:hover {
     color: #84aabc;
 }
@@ -969,6 +1021,34 @@ ul.list_5 li div p {
 ul.list_5 li div>span {
     float: right;
 }
+
+/*list 6*/
+
+ul.list_6 li {
+    list-style: none;
+    float: left;
+    width: 100%;
+    display: inline-block;
+    padding: 20px;
+    border-bottom: solid 1px #bfbfbf;
+    width: 100%;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+ul.list_6 li:first-child  {
+    border-top: solid 1px #bfbfbf;
+}
+
+ul.list_6 li >span {
+    float: right;
+}
+
+ul.list_6 li:hover {
+    border-bottom: solid 5px #84aabc;
+    background-color: #F2F2F2;
+}
+
 
 
 /*social icons*/

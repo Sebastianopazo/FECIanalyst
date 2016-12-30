@@ -180,3 +180,5 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 });
 
   $('#overlay').delay(1000).fadeOut('slow');
+
+var selectedPatientId;
