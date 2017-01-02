@@ -1,4 +1,5 @@
 // Initialize Firebase
+$('#overlay').show();
 var config = {
     apiKey: 'AIzaSyAt_5-XB3_KtoNA3dQGRavk9xNuMIHGajg',
     authDomain: 'fecianalyst.firebaseapp.com',
@@ -132,7 +133,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             $('.name').empty();
             $('.name').append(name);
         }, function(error) {
-            console.log(error);
+            window.alert(error);
         });
         //lastName
         const dbRefUserLastName = firebase.database().ref('users').child(currentUserUID).child('lastName');
@@ -143,12 +144,11 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             $('.lastName').append(lastName);
             $('#titleLastName').append(lastName);
         }, function(error) {
-            console.log(error);
+            window.alert(error);
         });
 
 
         //Get profile Image and put it on HTML.
-
         $(document).ready(function() {
             var storage = firebase.storage();
             var gsReference = storage.refFromURL('gs://fecianalyst.appspot.com/');
@@ -177,8 +177,5 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         $('#loginLi').fadeIn('fast');
         $('#logoutLi').fadeOut('fast');
     }
+    $('#overlay').fadeOut('slow');
 });
-
-  $('#overlay').delay(1000).fadeOut('slow');
-
-var selectedPatientId;
