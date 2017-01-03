@@ -124,7 +124,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         var currentUserUID = firebaseUser.uid;
         //get current user stored data with uid
         const dbRefUserName = firebase.database().ref('users').child(currentUserUID).child('name');
-
+        // Show User name on page title
         dbRefUserName.on('value', function(nameSnapshot) {
             var space = document.createTextNode("\u00A0");
             var name = JSON.stringify(nameSnapshot.val()).replace(/^"(.*)"$/, '$1');
@@ -135,7 +135,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         }, function(error) {
             window.alert(error);
         });
-        //lastName
+        //Show user lastName on page title
         const dbRefUserLastName = firebase.database().ref('users').child(currentUserUID).child('lastName');
         dbRefUserLastName.on('value', function(lastNameSnapshot) {
             var lastName = JSON.stringify(lastNameSnapshot.val()).replace(/^"(.*)"$/, '$1');

@@ -114,11 +114,6 @@
             </div>
         </div>
     </section>
-    <!-- trying something -->
-    <form name='config' action="about.html" method="post">
-    Type your first name: <input type="text" name="FirstName" /><br>
-    Type your last name: <input type="text" name="LastName" /><br>
-    <input type="submit" VALUE="Submit">
   </form>
     <!-- signup Info -->
     <section id="signupInfo" class="green-section wow fadeInUp" style="padding:50px 0">
@@ -286,7 +281,7 @@
 	<script type="text/javascript">
 	//create function to filter and append name and lastnames from patients
   function addNamesToList (array, id) {
-    $("#patientList").append("<li class='patient'>"+ array[3] + " " + array[2] + " " + array[5] + "<span><a href='" + id + ".html' class='bubble3 patientPage'><img src='images/edit.png'><span class='tooltiptext'>Edit Patient</span></a><span></li>");
+    $("#patientList").append("<li class='patient'>"+ array[3] + " " + array[2] + " " + array[5] + "<span><a href='patient.html?" + id + ".html' class='bubble3 patientPage'><img src='images/edit.png'><span class='tooltiptext'>Edit Patient</span></a><span></li>");
   }
 //GET PATIENTS INFO============================================================
 
