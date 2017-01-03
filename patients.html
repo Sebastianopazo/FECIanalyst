@@ -293,13 +293,14 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 		const dbrefPatients = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList');
 		dbrefPatients.on('value', function(snapshot) {
 			var patientList = snapshot.val();
-			//loop to get all patients from database
-			var i = 0;
+      //if you have no patients, show a message;
 			$("#patientList").empty();
       if (patientList === null) {
         $('#noPatients').show();
       } else{
         $('#noPatients').hide();
+      //loop to get all patients from database
+      var i = 0;
 			while (Object.keys(patientList)[i] != null) {
 				//get a specific patient info
 				var currentPatientId = Object.keys(patientList)[i];
@@ -320,8 +321,6 @@ $("#addPatient").click(function() {
   $('#patientInfo')[0].reset();
 });
 //upload information from Patient Form on completion
-			const postRefPatients = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList');
-
 			//turn inputs into array and the array into a "patient object"
 			var patientFormArray = [];
 			//when clicking on submit, submit info
@@ -333,7 +332,12 @@ $("#addPatient").click(function() {
 				//function to turn the array rom the form into an object that can be sent to firebase; also to upload to database
 				function patientInfoArrayToObject (array) {
 					var patientInfoObject = {"age" : array[3], "intakeDate" : array[5], "lastName" : array[1], "name" : array[0], "recordNumber" : array[4], "secondLastName" : array[2]};
-					postRefPatients.push().set(patientInfoObject);
+					var newPatientKey = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList').push().key;
+           // Write the new Patient's ID simultaneously in the Patient list and the Measures list.
+          var updates = {};
+          updates['/patientsMeasures/' + newPatientKey] = "empty";
+          updates['/allPatientList/' + currentUserUID + '/patientList/' + newPatientKey] = patientInfoObject;
+          return firebase.database().ref().update(updates);
 				}
 				patientInfoArrayToObject(patientFormArray);
 				var lightBox1 = document.getElementById('light');
@@ -344,11 +348,11 @@ $("#addPatient").click(function() {
 
 		});
 
-} else {
-  window.location = 'index.html';
-}
+    } else {
+      window.location = 'index.html';
+    }
 
-});
+    });
 
 
 

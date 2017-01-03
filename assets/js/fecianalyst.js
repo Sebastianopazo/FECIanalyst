@@ -116,7 +116,7 @@ btnSignUp.addEventListener('click', e => {
 //get Current user name and lastname from server and put it on the logout bubble and page title
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-        $('#signupInfo').fadeOut('slow');
+        $('#signupInfo').hide();
         $('#loginLi').fadeOut('fast');
         $('#logoutLi').fadeIn('fast');
         $('#loginBubble').fadeOut('fast');

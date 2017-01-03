@@ -13,68 +13,69 @@
 </head>
 <!--body-->
 <div id="overlay" class="overlay">
-  <h1>Loading...</h1>
-  <div class="loader"></div>
+	<h1>Loading...</h1>
+	<div class="loader"></div>
 </div>
+
 <body class="animsition">
 	<header class="main-header">
-			<div class="container">
-					<a href="index.html">
-							<div id="logo">
-							</div>
-					</a>
-					<div class="menu">
-							<!-- desktop navbar -->
-							<nav class="desktop-nav">
-									<ul class="first-level">
-											<li><a href="dashboard.html" class="animsition-link">Home</a></li>
-											<li><a href="about.html" class="animsition-link">about FECI</a></li>
-											<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
-											<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
-											<li>
-													<a id="loginLi" href="#">Login</a>
-											</li>
-											<div class="bubble" id="loginBubble" data-tooltip="0">
-													<form id='loginForm' action="#" method="post">
-															<div class="input_4">
-																	<input id=txtEmail type="text" name="user name" autocomplete="off" placeholder="User Name">
-															</div>
-															<div class="input_4">
-																	<input id=txtPassword name="password" type="password" placeholder="Password">
-															</div>
-															<a id="btnLogin" href="#" class="btn white2"><span>Login</span></a>
-															<p>
-																Forgot password?
-															</p>
-															<div class="arrow"></div>
-											</div>
-											<li><a id="logoutLi" href="#">Profile</a></li>
-											<div class="bubble2" id="logoutBubble" data-tooltip="0">
-													<div class="arrow2"></div>
-													<div class="name"></div>
-													<div class="lastName"></div>
-													<a href="profile.html" class="editProfile">
-															<img id="profileImage" src="" alt="" />
-															<span>Edit Profile</span>
-													</a>
-													<a id="btnLogout" href="#" class="btn white2"><span>Logout</span></a>
-											</div>
-									</ul>
-							</nav>
-							<!-- mobile navbar -->
-							<nav class="mobile-nav"></nav>
-							<div class="menu-icon">
-									<div class="line"></div>
-									<div class="line"></div>
-									<div class="line"></div>
-							</div>
-					</div>
+		<div class="container">
+			<a href="index.html">
+				<div id="logo">
+				</div>
+			</a>
+			<div class="menu">
+				<!-- desktop navbar -->
+				<nav class="desktop-nav">
+					<ul class="first-level">
+						<li><a href="dashboard.html" class="animsition-link">Home</a></li>
+						<li><a href="about.html" class="animsition-link">about FECI</a></li>
+						<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
+						<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
+						<li>
+							<a id="loginLi" href="#">Login</a>
+						</li>
+						<div class="bubble" id="loginBubble" data-tooltip="0">
+							<form id='loginForm' action="#" method="post">
+								<div class="input_4">
+									<input id=txtEmail type="text" name="user name" autocomplete="off" placeholder="User Name">
+								</div>
+								<div class="input_4">
+									<input id=txtPassword name="password" type="password" placeholder="Password">
+								</div>
+								<a id="btnLogin" href="#" class="btn white2"><span>Login</span></a>
+								<p>
+									Forgot password?
+								</p>
+								<div class="arrow"></div>
+						</div>
+						<li><a id="logoutLi" href="#">Profile</a></li>
+						<div class="bubble2" id="logoutBubble" data-tooltip="0">
+							<div class="arrow2"></div>
+							<div class="name"></div>
+							<div class="lastName"></div>
+							<a href="profile.html" class="editProfile">
+								<img id="profileImage" src="" alt="" />
+								<span>Edit Profile</span>
+							</a>
+							<a id="btnLogout" href="#" class="btn white2"><span>Logout</span></a>
+						</div>
+					</ul>
+				</nav>
+				<!-- mobile navbar -->
+				<nav class="mobile-nav"></nav>
+				<div class="menu-icon">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
 			</div>
+		</div>
 	</header>
 	<div class="site-hero_2">
 		<div class="page-title">
 			<div class="big-title montserrat-text uppercase">
-			Sebastian Opazo
+				Sebastian Opazo
 			</div>
 			<div class="small-title montserrat-text uppercase">HOME/Dashboard/Patient Profile</div>
 		</div>
@@ -87,7 +88,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green"><div class="edit2"></div><span>Edit Info</span></a>
+					<a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green">
+						<div class="edit2"></div><span>Edit Info</span></a>
 				</div>
 			</div>
 			<div class="row">
@@ -126,31 +128,15 @@
 					<a href="javascript:void(0)" onclick="$('#light2').fadeIn('fast');$('#fade2').fadeIn('fast');" class="btn green"><span>Add Measure</span></a>
 				</div>
 			</div>
+			<div id="noMeasures" class="alert alert-info">
+				<strong>There are no measures recorded for this patient</strong>
+				<div class="">
+					Add Measure
+				</div>
+			</div>
 			<div class="row">
-				<!-- <div class="alert alert-info">
-					<strong>There are no measures recorded for this patient</strong>
-					<div class="">
-						Add Measure
-					</div>
-				</div> -->
 				<div class="widget wow fadeInUp">
-					<ul class="list">
-						<li>
-							<a href="javascript:void(0)" onclick="$('#light3').fadeIn('fast');$('#fade3').fadeIn('fast');">
-								EPQ
-									<span>
-										<div class="info">
-										</div>
-										<div class="edit">
-										</div>
-										<div class="delete">
-										</div>
-									</span>
-								</a>
-							</li>
-						<li><a href="">Self-Esteem Scale<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
-						<li><a href="javascript:void(0)" onclick="$('#light4').fadeIn('fast');$('#fade4').fadeIn('fast');">Rathus Assertiveness Schedule<span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
-						<li><a href="">Gambrill & Ritchie Assertion Inventory <span><div class="info"></div><div class="edit"></div><div class="delete"></div></span></a></li>
+					<ul id="measureList" class="list_6">
 					</ul>
 				</div>
 			</div>
@@ -163,67 +149,67 @@
 	</section>
 	<!-- signup Info -->
 	<section id="signupInfo" class="green-section wow fadeInUp" style="padding:50px 0">
-			<div class="container">
-					<div class="col-md-12">
-							<div class="row">
-									<div class="white-section" style="padding:20px">
-											<span class="montserrat-text uppercase" style="font-size:24px">Create a New User</span>
-											<p>
-													Create Your Account with the Code that your Instructor Gave you.
-											</p>
-											<div class="row">
-													<form action="#" method="post">
-															<div class="col-md-6">
-																	<div class="input_1" style="margin-bottom:30px">
-																			<input id="signupEmail" type="text" name="Email" autocomplete="off">
-																			<span>Email</span>
-																	</div>
-															</div>
-															<div class="col-md-6">
-																	<div class="input_1" style="margin-bottom:30px">
-																			<input id="signupName" type="text" name="Name" autocomplete="off">
-																			<span>Name</span>
-																	</div>
-															</div>
-															<div class="col-md-6">
-																	<div class="input_1" style="margin-bottom:30px">
-																			<input id="signupLastName" type="text" name="Last Name" autocomplete="off">
-																			<span>Last Name</span>
-																	</div>
-															</div>
-															<div class="col-md-6">
-																	<div class="input_1" style="margin-bottom:30px">
-																			<input id="signupSecondLastName" type="text" name="Second Last Name" autocomplete="off">
-																			<span>Second Last Name</span>
-																	</div>
-															</div>
-															<div class="col-md-6">
-																	<div class="input_1" style="margin-bottom:15px">
-																			<input id="signupSupervisor" type="text" name="email" autocomplete="off">
-																			<span>Supervisor</span>
-																	</div>
-															</div>
-															<div class="col-md-6">
-																	<div class="input_1" style="margin-bottom:15px">
-																			<input id="signupCode" type="text" name="code" autocomplete="off">
-																			<span>Security Code</span>
-																	</div>
-															</div>
-															<div class="col-md-6">
-																	<div class="input_3" style="margin-bottom:15px">
-																			<input id="signupPassword" type="password" name="password" autocomplete="off">
-																			<span>Password</span>
-																	</div>
-															</div>
-															<div class="col-md-6">
-																	<div class="input_3" style="margin-bottom:15px">
-																			<input id="signupPassword2" type="password" name="password2" autocomplete="off">
-																			<span>Repeat Password</span>
-																	</div>
-															</div>
-															<div class="col-md-12">
-																	<h4 class="selectTitle">Program</h4>
-																	<select id="signupProgram" name="program">
+		<div class="container">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="white-section" style="padding:20px">
+						<span class="montserrat-text uppercase" style="font-size:24px">Create a New User</span>
+						<p>
+							Create Your Account with the Code that your Instructor Gave you.
+						</p>
+						<div class="row">
+							<form action="#" method="post">
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input id="signupEmail" type="text" name="Email" autocomplete="off">
+										<span>Email</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input id="signupName" type="text" name="Name" autocomplete="off">
+										<span>Name</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input id="signupLastName" type="text" name="Last Name" autocomplete="off">
+										<span>Last Name</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input id="signupSecondLastName" type="text" name="Second Last Name" autocomplete="off">
+										<span>Second Last Name</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:15px">
+										<input id="signupSupervisor" type="text" name="email" autocomplete="off">
+										<span>Supervisor</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:15px">
+										<input id="signupCode" type="text" name="code" autocomplete="off">
+										<span>Security Code</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_3" style="margin-bottom:15px">
+										<input id="signupPassword" type="password" name="password" autocomplete="off">
+										<span>Password</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_3" style="margin-bottom:15px">
+										<input id="signupPassword2" type="password" name="password2" autocomplete="off">
+										<span>Repeat Password</span>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<h4 class="selectTitle">Program</h4>
+									<select id="signupProgram" name="program">
 																		<option value="Masters 2015">Select</option>
 																		<option value="Masters 2015">Masters 2015</option>
 																		<option value="Masters 2016">Masters 2016</option>
@@ -234,16 +220,16 @@
 																		<option value="Certificate 2017">Certificate 2017</option>
 																		<option value="Supervisor">Supervisor</option>
 																	</select>
-															</div>
-															<div class="col-md-12">
-																	<a id="btnSignUp" href="#" class="btn green"><span>Sign Up	</span></a>
-															</div>
-													</form>
-											</div>
-									</div>
-							</div>
+								</div>
+								<div class="col-md-12">
+									<a id="btnSignUp" href="#" class="btn green"><span>Sign Up	</span></a>
+								</div>
+							</form>
+						</div>
 					</div>
+				</div>
 			</div>
+		</div>
 	</section>
 	<!-- FOOTER -->
 	<footer class="main-footer wow fadeInUp">
@@ -314,7 +300,7 @@
 		<h2 class="small-title montserrat-text uppercase">
 			Add Measures:
 		<h2>
-			<select name="cars">
+	<select name="measures">
 		 <option value="choose">Choose an option</option>
      <option value="EPQ">Eysenck's EPQ</option>
      <option value="saab">Rathus Assertiveness Schedule</option>
@@ -668,6 +654,12 @@
 		});
 	</script>
 	<script type="text/javascript">
+	//create function to filter and append measures to list
+	function addMeasuresToList (name, id, date) {
+		$("#measureList").append("<li class='measure'>" + name + date + "<span><a href='#" + id + ".html' class='bubble3 patientPage'><img src='images/edit.png'><span class='tooltiptext'>Edit Measure</span></a><span></li>");
+	}
+
+	//Read patient ID from URL
 	var a = location.href;
 	var ifFromUrl = a.substring(a.indexOf("?")+1);
 	currentPatientId = ifFromUrl.substring(0, ifFromUrl.lastIndexOf("."));
@@ -694,10 +686,34 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
 	}, function(error) {
 			window.alert(error);
 	});
-} else {
-	window.location = 'index.html';
-}
-});
+	//reference to Patient Measures
+	const dbrefMeasures = firebase.database().ref('patientsMeasures').child(currentPatientId);
+	dbrefMeasures.on('value', function(snapshot) {
+		var measureList = snapshot.val();
+		//if the patient has no measures, show a message;
+		$("#measureList").empty();
+		if (measureList === "empty") {
+			$('#noMeasures').show();
+		} else{
+			$('#noMeasures').hide();
+		//loop to get all the patients' measures from database
+		var i = 0;
+			while (Object.keys(measureList)[i] != null) {
+				//get a specific Measure info
+				var currentMeasure = Object.keys(measureList);
+				var values = Object.values(measureList[currentMeasure]);
+				var name = values[1];
+				var date = values[0];
+				//append info to list
+				 addMeasuresToList(name, currentMeasure, date);
+					i++;
+				}
+			}
+			});
+		}		else {
+			 	window.location = 'index.html';
+	 }
+ });
 	</script>
 </body>
 
