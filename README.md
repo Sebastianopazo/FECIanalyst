@@ -1,5 +1,4 @@
 # WebProject
-# MSTU 5003 Design Document
 
 **FECI-analyst | Sebastian Opazo-Marchetti | Tools used: Bootstrap, Jquery, Chart.js, ionicons, animate **
 
